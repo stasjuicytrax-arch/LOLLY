@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+*.log
+.env
+# full videos stay local; only loops and posters are committed
+public/assets/video/*.mp4
+!public/assets/video/*-loop.mp4
