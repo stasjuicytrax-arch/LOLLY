@@ -6,15 +6,56 @@
     <title>LOLLY — DJ &amp; Producer | Press Kit</title>
     <meta name="description" content="Myanmar-born DJ & producer. A decade of bass-driven sets across Myanmar and Thailand." />
     <meta name="theme-color" content="#0b0505" />
-    <link rel="icon" href="./assets/logo/lolly-logo-white.png" type="image/png" />
+    <link rel="icon" href="./assets/logo/lolly-spiral-white.png" type="image/png" />
+    <link rel="preload" as="image" href="./assets/img/hero/hero-4-plate.avif" type="image/avif" media="(min-width: 768px)" fetchpriority="high" />
+    <noscript><style>.pre{display:none!important}[data-reveal]{opacity:1!important;transform:none!important}body{overflow:auto!important}</style></noscript>
   </head>
-  <body>
-    <main class="stage">
-      <div>
-        <h1 class="display">Lolly</h1>
-        <p class="micro">DJ / Producer — Yangon, Myanmar · Est. 2015</p>
+  <body class="is-loading">
+    <div class="pre" aria-hidden="true">
+      <span class="pre__label micro">[ LOLLY — EPK ]</span>
+      <img class="pre__spiral" src="./assets/logo/lolly-spiral-white.png" alt="" width="388" height="388" />
+      <span class="pre__count" data-pre-count>000</span>
+      <div class="pre__curtain"></div>
+    </div>
+
+    <header class="hero" id="top">
+      <div class="hero__bg" data-hero-bg>
+        <picture>
+          <source media="(max-width: 767px)" srcset="./assets/img/press/press-04.jpg" />
+          <source type="image/avif" srcset="./assets/img/hero/hero-4-plate.avif" />
+          <source type="image/webp" srcset="./assets/img/hero/hero-4-plate.webp" />
+          <img src="./assets/img/hero/hero-4-plate.jpg" alt="" width="2752" height="1536" fetchpriority="high" decoding="async" />
+        </picture>
       </div>
-    </main>
+      <canvas class="hero__shader" data-hero-shader aria-hidden="true"></canvas>
+
+      <h1 class="hero__word display" data-hero-word aria-label="LOLLY"><span aria-hidden="true">LOLLY</span></h1>
+
+      <!-- Layer 3: the figure, cut out, above the word. Shares the plate's box and crop and moves with it. -->
+      <div class="hero__cutout" data-hero-cutout aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="./assets/img/hero/hero-4-cutout.webp" />
+          <img src="./assets/img/hero/hero-4-cutout.png" alt="" width="1678" height="937" decoding="async" />
+        </picture>
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <p class="hero__tl micro" data-reveal>[ 00 ] Electronic Press Kit</p>
+      <p class="hero__tr micro" data-reveal>Est. 2015</p>
+
+      <div class="hero__foot">
+        <div class="hero__tag" data-reveal>
+          <p class="micro">DJ / Producer — Yangon, Myanmar</p>
+          <p class="hero__lede">Myanmar-born DJ &amp; producer. A decade of bass-driven sets across Myanmar and Thailand.</p>
+        </div>
+        <a class="btn" href="#booking" data-reveal>
+          <span class="btn__label">Book Lolly</span>
+          <span class="btn__dot" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 10 10 2M4 2h6v6" fill="none" stroke="currentColor" stroke-width="1.4" /></svg></span>
+        </a>
+      </div>
+    </header>
+
+    <div class="grain" aria-hidden="true"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

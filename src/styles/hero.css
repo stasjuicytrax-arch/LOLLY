@@ -1,0 +1,92 @@
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 0 0 var(--r-section) var(--r-section);
+  background: var(--studio);
+}
+
+/* Layer 1 (photo) and layer 3 (figure) share one box and one crop so they register exactly. */
+.hero__bg,
+.hero__cutout {
+  position: absolute;
+  inset: -4%;
+  will-change: transform;
+  pointer-events: none;
+}
+.hero__bg picture, .hero__bg img,
+.hero__cutout picture, .hero__cutout img { display: block; width: 100%; height: 100%; }
+.hero__bg img,
+.hero__cutout img { object-fit: cover; object-position: 50% 50%; }
+
+.hero__shader {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.hero__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(75% 65% at 50% 45%, transparent 45%, rgba(11, 5, 5, 0.5) 100%),
+    linear-gradient(to top, rgba(11, 5, 5, 0.6), transparent 34%);
+  pointer-events: none;
+}
+
+/* Layer 2: the mega word, behind the figure. */
+.hero__word {
+  --wdth: 125;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 44%;
+  translate: 0 -50%;
+  text-align: center;
+  font-size: var(--fs-mega);
+  font-variation-settings: 'wdth' var(--wdth);
+  color: var(--bone);
+  white-space: nowrap;
+  will-change: transform;
+}
+.hero__word .char-mask { display: inline-block; overflow: hidden; padding-block: 0.04em; margin-block: -0.04em; }
+
+.hero__tl, .hero__tr { position: absolute; top: var(--field); margin: 0; color: var(--bone); }
+.hero__tl { left: var(--field); }
+.hero__tr { right: var(--field); }
+
+.hero__foot {
+  position: absolute;
+  left: var(--field);
+  right: var(--field);
+  bottom: var(--field);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-8);
+}
+.hero__tag { max-width: 34ch; }
+.hero__tag .micro { margin: 0 0 var(--s-3); color: var(--bone); }
+.hero__lede { margin: 0; color: var(--bone); opacity: 0.85; }
+
+/* Above the figure's layer so labels never get covered. */
+.hero__tl, .hero__tr, .hero__foot { z-index: 5; }
+
+[data-reveal] { opacity: 0; transform: translateY(16px); }
+
+@media (max-width: 767px) {
+  /* Mobile uses the vertical press-04 crop: no cut-out, word blends into the photo instead. */
+  .hero__cutout { display: none; }
+  .hero__bg img { object-position: 50% 20%; }
+  .hero__word { top: 19%; font-size: 29vw; --wdth: 80; mix-blend-mode: overlay; }
+  .hero__foot { flex-direction: column; align-items: flex-start; }
+  .hero__shader { opacity: 0.4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; }
+}

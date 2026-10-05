@@ -1,0 +1,31 @@
+.pre {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: var(--bone);
+}
+.pre__label { position: absolute; top: var(--field); left: var(--field); }
+.pre__spiral { width: clamp(120px, 18vw, 220px); height: auto; will-change: transform; }
+.pre__count {
+  position: absolute;
+  right: var(--field);
+  bottom: var(--field);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-variation-settings: 'wdth' 62;
+  font-size: clamp(4rem, 12vw, 11rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.pre__curtain {
+  position: absolute;
+  inset: 0;
+  background: var(--signal);
+  transform: translateY(100%);
+  border-radius: var(--r-section) var(--r-section) 0 0;
+}
+body.is-loading { overflow: hidden; }
