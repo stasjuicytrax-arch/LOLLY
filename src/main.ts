@@ -7,6 +7,7 @@ import './styles/components.css';
 import './styles/preloader.css';
 import './styles/hero.css';
 import './styles/sections.css';
+import './styles/video.css';
 
 import { initSmoothScroll } from './modules/smooth';
 import { runPreloader } from './modules/preloader';
@@ -15,6 +16,10 @@ import { initMarquee } from './modules/marquee';
 import { initAbout } from './modules/about';
 import { initStats } from './modules/stats';
 import { lazyLoops } from './modules/media';
+import { initShowreel } from './modules/showreel';
+import { initWall } from './modules/wall';
+import { initLightbox } from './modules/lightbox';
+import { initCursor } from './modules/cursor';
 
 const lenis = initSmoothScroll();
 lenis?.stop();
@@ -24,6 +29,10 @@ initMarquee(lenis);
 initAbout(lenis);
 initStats();
 lazyLoops();
+initShowreel();
+initWall();
+initLightbox(lenis);
+initCursor();
 runPreloader().then(() => {
   lenis?.start();
   revealHero();

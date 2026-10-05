@@ -5,7 +5,7 @@ const desktop = window.matchMedia('(hover: hover) and (pointer: fine) and (min-w
  * poster (TZ §7: loops start on tap, never on load).
  */
 export function lazyLoops(root: ParentNode = document): void {
-  const videos = root.querySelectorAll<HTMLVideoElement>('video[data-src]');
+  const videos = root.querySelectorAll<HTMLVideoElement>('video[data-src]:not(.vcard video)');
   if (!videos.length || !desktop.matches) return;
   const io = new IntersectionObserver(
     (entries) => {

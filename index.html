@@ -124,6 +124,60 @@
           </div>
         </div>
       </section>
+
+      <!-- 5 · Showreel: the pill opens into full-bleed on scroll -->
+      <section class="showreel" id="showreel" aria-label="Showreel">
+        <div class="showreel__stage">
+          <p class="label micro showreel__label">[ 03 ] Showreel</p>
+          <span class="showreel__word showreel__word--l display" aria-hidden="true">Show</span>
+          <span class="showreel__word showreel__word--r display" aria-hidden="true">reel</span>
+          <button class="showreel__media" type="button" data-cursor="PLAY" data-lightbox-video
+            data-full="./assets/video/aftermovie-h.mp4" data-loop="./assets/video/aftermovie-h-loop.mp4" data-poster="./assets/video/aftermovie-h-poster.jpg"
+            aria-label="Play the aftermovie with sound">
+            <video muted loop playsinline preload="none" poster="./assets/video/aftermovie-h-poster.jpg" data-src="./assets/video/aftermovie-h-loop.mp4" aria-hidden="true"></video>
+            <span class="showreel__play" aria-hidden="true">Play <i>↗</i></span>
+          </button>
+          <p class="showreel__meta micro">Aftermovie — 1:42</p>
+        </div>
+      </section>
+
+      <!-- 6 · Video wall -->
+      <section class="wall" id="video" aria-label="Video">
+        <div class="wrap">
+          <p class="label micro">[ 04 ] Video</p>
+          <h2 class="wall__title display">Watch Lolly <span class="t-ash">play</span></h2>
+        </div>
+        <div class="wall__track" data-drag data-cursor="DRAG">
+          <article class="vcard vcard--tall">
+            <button type="button" data-cursor="PLAY" data-lightbox-video data-full="./assets/video/booth-pov-v.mp4" data-loop="./assets/video/booth-pov-v-loop.mp4" data-poster="./assets/video/booth-pov-v-poster.jpg" aria-label="Play: Booth POV, 0:45">
+              <img src="./assets/video/booth-pov-v-poster.jpg" alt="" loading="lazy" decoding="async" />
+              <video muted loop playsinline preload="none" data-src="./assets/video/booth-pov-v-loop.mp4" aria-hidden="true"></video>
+              <span class="vcard__cap micro"><b>Booth POV</b><span>0:45</span></span>
+            </button>
+          </article>
+          <article class="vcard vcard--wide">
+            <button type="button" data-cursor="PLAY" data-lightbox-video data-full="./assets/video/club-set-h.mp4" data-loop="./assets/video/club-set-h-loop.mp4" data-poster="./assets/video/club-set-h-poster.jpg" aria-label="Play: Club set, 1:20">
+              <img src="./assets/video/club-set-h-poster.jpg" alt="" loading="lazy" decoding="async" />
+              <video muted loop playsinline preload="none" data-src="./assets/video/club-set-h-loop.mp4" aria-hidden="true"></video>
+              <span class="vcard__cap micro"><b>Club set</b><span>1:20</span></span>
+            </button>
+          </article>
+          <article class="vcard vcard--mid">
+            <button type="button" data-cursor="PLAY" data-lightbox-video data-full="./assets/video/teaser-no-rule-v.mp4" data-loop="./assets/video/teaser-no-rule-v-loop.mp4" data-poster="./assets/video/teaser-no-rule-v-poster.jpg" aria-label="Play: Teaser, No Rule, 0:45">
+              <img src="./assets/video/teaser-no-rule-v-poster.jpg" alt="" loading="lazy" decoding="async" />
+              <video muted loop playsinline preload="none" data-src="./assets/video/teaser-no-rule-v-loop.mp4" aria-hidden="true"></video>
+              <span class="vcard__cap micro"><b>Teaser — No Rule</b><span>0:45</span></span>
+            </button>
+          </article>
+          <article class="vcard vcard--tall vcard--low">
+            <button type="button" data-cursor="PLAY" data-lightbox-video data-full="./assets/video/extra-2009.mp4" data-loop="./assets/video/extra-2009-loop.mp4" data-poster="./assets/video/extra-2009-poster.jpg" aria-label="Play: From the floor, 1:49">
+              <img src="./assets/video/extra-2009-poster.jpg" alt="" loading="lazy" decoding="async" />
+              <video muted loop playsinline preload="none" data-src="./assets/video/extra-2009-loop.mp4" aria-hidden="true"></video>
+              <span class="vcard__cap micro"><b>From the floor</b><span>1:49</span></span>
+            </button>
+          </article>
+        </div>
+      </section>
     </main>
 
     <div class="grain" aria-hidden="true"></div>
