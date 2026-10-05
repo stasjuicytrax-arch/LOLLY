@@ -11,3 +11,14 @@
 - Все 5 видео, все 10 резидентств, все 32 клуба и все 7 релизов должны быть на сайте (TZ §6).
 - Исходники (тяжёлые видео, оригиналы фото) лежат в родительской папке `C:\Users\G13\Desktop\CLAUDE\DJ LOLLY`. В git их не класть.
 - Язык сайта: английский. Общение с заказчиком: русский.
+
+## Первый шаг: подготовить ассеты из исходников
+Готовые ассеты из облачной сессии не доехали (медленная передача), поэтому собери `assets/` сам из `..\` (папка DJ LOLLY), по раскладке из `docs/CONTENT.md`:
+- `assets/img/hero/`: `hero-4-main.jpg` ← `hero 4.jpg`, `hero-3-alt-red.jpg` ← `Hero 3.jpg` (ужать до 2752px), `hero-2-alt-white.jpg` ← `Hero 2 .jpg`
+- `assets/img/press/press-01..08.jpg` ← `Photo/` по порядку имён: 1790761486190294, …486508616, …489419298, …505472733, …505954458, …537776094, …667581794, …667942841 (длинная сторона 2400px, q82)
+- `assets/img/live/live-01..04.jpg` ← картинки image2, image3, image5, image6 из `BIO.docx` (распаковать как zip: `word/media/`)
+- `assets/logo/lolly-logo-white.png` ← `Logo/1790761668944509.png`, `lolly-logo-black.png` ← `Logo/1790761690406437.png`
+- `assets/img/fx/gradient-mask-vertical.png` ← `Photo/Без имени-1.png`
+- `assets/img/releases/`: 7 обложек вырезать из `Old presentation.jpg` (полоса RELEASE TRACKS, y≈347–418), это временные заглушки
+- `assets/video/`: имена aftermovie-h ← IMG_8004.MP4, club-set-h ← IMG_9848.MOV, booth-pov-v ← IMG_5554.MOV, teaser-no-rule-v ← IMG_8006.MP4, extra-2009 ← IMG_2009.MOV. Для каждого сделай полную версию, `-loop.mp4` и `-poster.jpg`, команды ffmpeg в TZ §8
+- `docs/references/` ← `Referens/*`, `docs/source/old-presskit.jpg` ← `Old presentation.jpg`

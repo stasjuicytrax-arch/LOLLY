@@ -1,0 +1,48 @@
+:root {
+  /* color — DESIGN_SYSTEM §2 */
+  --ink: #0b0505;
+  --ink-2: #160606;
+  --blood: #360405;
+  --wine: #8b1b17;
+  --signal: #e3150f;
+  --studio: #b63d34;
+  --bone: #f0edec;
+  --ash: #c6a29d;
+  --smoke: rgba(240, 237, 236, 0.08);
+
+  /* type — §3 */
+  --font-display: 'Archivo Variable', 'Archivo', sans-serif;
+  --font-text: 'Geist Variable', 'Geist', sans-serif;
+  --font-mono: 'Geist Mono Variable', 'Geist Mono', monospace;
+  --fs-mega: clamp(5rem, 22vw, 26rem);
+  --fs-h1: clamp(3rem, 9vw, 9rem);
+  --fs-h2: clamp(2.25rem, 5.5vw, 5.5rem);
+  --fs-h3: clamp(1.5rem, 2.4vw, 2.25rem);
+  --fs-body: clamp(1rem, 1.1vw, 1.125rem);
+  --fs-micro: 0.75rem;
+
+  /* grid — §4 */
+  --gutter: 24px;
+  --field: clamp(20px, 4vw, 64px);
+  --max: 1680px;
+
+  /* space — §5 (8px baseline) */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-6: 24px; --s-8: 32px;
+  --s-12: 48px; --s-16: 64px; --s-24: 96px; --s-32: 128px; --s-48: 192px; --s-64: 256px;
+  --section-gap: clamp(128px, 18vh, 256px);
+  --r-card: 20px;
+  --r-pill: 999px;
+  --r-section: 32px;
+
+  /* motion — §7 */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.76, 0, 0.24, 1);
+  --t-micro: 200ms;
+  --t-ui: 450ms;
+  --t-reveal: 900ms;
+  --t-cinematic: 1400ms;
+}
+
+@media (max-width: 767px) {
+  :root { --gutter: 12px; --field: 16px; }
+}

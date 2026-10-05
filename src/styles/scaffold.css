@@ -1,0 +1,9 @@
+.stage {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: var(--field);
+  background: radial-gradient(60% 50% at 50% 40%, rgba(227, 21, 15, 0.35), transparent), var(--ink);
+}
+.stage h1 { font-size: var(--fs-mega); font-variation-settings: 'wdth' 125; }
+.stage p { margin: var(--s-6) 0 0; text-align: center; }
