@@ -178,6 +178,36 @@
           </article>
         </div>
       </section>
+
+      <!-- 7 · Residencies: horizontal pinned timeline (filled from src/data/content.ts) -->
+      <section class="res" id="residencies" aria-label="Residencies">
+        <div class="res__stage">
+          <header class="res__head">
+            <p class="label micro">[ 05 ] Residencies</p>
+            <h2 class="res__title display">2015 <span class="t-ash">→ 2024</span></h2>
+          </header>
+          <div class="res__viewport"><ol class="res__track" data-residencies></ol></div>
+          <div class="res__axis" aria-hidden="true">
+            <div class="res__line"><i class="res__fill"></i></div>
+            <ol class="res__ticks" data-res-ticks></ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 · Clubs & Tours -->
+      <section class="tours" id="tours" aria-label="Clubs and tours">
+        <video class="tours__bg" muted loop playsinline preload="none" poster="./assets/video/club-set-h-poster.jpg" data-src="./assets/video/club-set-h-loop.mp4" aria-hidden="true"></video>
+        <div class="tours__veil" aria-hidden="true"></div>
+        <div class="wrap tours__wrap">
+          <p class="label micro">[ 06 ] Clubs &amp; Tours</p>
+          <h2 class="tours__title display"><span data-tours-total>32</span> venues <span class="t-ash">in <span data-tours-cities>8</span> cities</span></h2>
+          <div class="tours__grid">
+            <ul class="tours__cities" data-cities aria-label="Cities"></ul>
+            <div class="tours__clubs" data-clubs></div>
+          </div>
+        </div>
+        <div class="tours__preview" data-preview aria-hidden="true"></div>
+      </section>
     </main>
 
     <div class="grain" aria-hidden="true"></div>

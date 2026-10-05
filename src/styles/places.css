@@ -1,0 +1,130 @@
+/* ---- 7 · Residencies ---- */
+.res { margin-top: var(--section-gap); }
+.res__stage { position: relative; height: 100svh; min-height: 620px; overflow: hidden; display: flex; flex-direction: column; }
+.res__head { padding: var(--field) var(--field) 0; display: flex; justify-content: space-between; align-items: flex-end; gap: var(--s-8); }
+.res__head .label { margin: 0; align-self: flex-start; }
+.res__title { font-size: var(--fs-h2); font-variation-settings: 'wdth' 100; text-align: right; }
+
+.res__viewport { flex: 1; min-height: 0; display: flex; align-items: center; overflow: hidden; }
+.res__track {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(64px, 9vw, 160px);
+  margin: 0;
+  padding: 0 var(--field);
+  list-style: none;
+  width: max-content;
+  will-change: transform;
+}
+.rpanel { flex: none; display: grid; gap: var(--s-4); min-width: clamp(260px, 40vw, 640px); }
+.rpanel:nth-child(even) { margin-top: clamp(40px, 12vh, 120px); }
+.rpanel__n { margin: 0; }
+.rpanel__year {
+  display: flex; align-items: baseline; white-space: nowrap;
+  font-size: clamp(5rem, 15vw, 20rem);
+  font-variation-settings: 'wdth' 62;
+  line-height: 0.82;
+  color: var(--bone);
+}
+.rpanel__to { color: var(--ash); }
+.rpanel__club { font-size: var(--fs-h3); font-variation-settings: 'wdth' 100; line-height: 1; color: var(--bone); }
+.rpanel__tag { margin: 0; }
+.rpanel.is-now .rpanel__year { color: var(--signal); }
+
+.res__axis { padding: var(--s-6) var(--field) var(--field); }
+.res__line { position: relative; height: 1px; background: var(--smoke); }
+.res__fill { position: absolute; inset: 0; background: var(--signal); transform-origin: 0 50%; transform: scaleX(0); height: 3px; margin-top: -1px; }
+.res__ticks { display: flex; justify-content: space-between; margin: var(--s-3) 0 0; padding: 0; list-style: none; }
+.res__ticks li { font-family: var(--font-mono); font-size: var(--fs-micro); letter-spacing: 0.08em; color: var(--ash); opacity: 0.5; transition: opacity var(--t-ui) var(--ease-out), color var(--t-ui) var(--ease-out); }
+.res__ticks li.is-on { opacity: 1; color: var(--bone); }
+
+/* touch + small screens: native swipe ribbon instead of a pin */
+@media (max-width: 767px), (hover: none) {
+  .res__stage { height: auto; min-height: 0; padding-bottom: var(--s-8); }
+  .res__head { flex-direction: column; align-items: flex-start; gap: var(--s-4); }
+  .res__title { text-align: left; }
+  .res__viewport { display: block; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: var(--s-12); scrollbar-width: none; }
+  .res__viewport::-webkit-scrollbar { display: none; }
+  .res__track { gap: var(--s-12); }
+  .rpanel { scroll-snap-align: start; min-width: 78vw; }
+  .rpanel:nth-child(even) { margin-top: var(--s-12); }
+  .rpanel__year { font-size: clamp(4.5rem, 24vw, 9rem); }
+  .res__axis { display: none; }
+}
+
+/* ---- 8 · Clubs & Tours ---- */
+.tours {
+  position: relative;
+  margin-top: var(--section-gap);
+  padding-block: var(--s-32);
+  background: var(--ink);
+  isolation: isolate;
+  overflow: hidden;
+}
+.tours__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: 0.5; }
+.tours__veil { position: absolute; inset: 0; z-index: -1; background: linear-gradient(to bottom, var(--ink), rgba(11, 5, 5, 0.55) 30%, rgba(11, 5, 5, 0.7) 70%, var(--ink)); }
+.tours__title { font-size: var(--fs-h2); font-variation-settings: 'wdth' 100; }
+.tours__grid { margin-top: var(--s-24); display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gutter); align-items: start; }
+.tours__cities { grid-column: 1 / span 5; list-style: none; margin: 0; padding: 0; }
+.tours__clubs { grid-column: 7 / span 6; position: relative; min-height: 28rem; }
+
+.cityrow {
+  width: 100%;
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-4);
+  padding: var(--s-3) 0;
+  border: 0; border-bottom: 1px solid var(--smoke);
+  background: none; color: var(--ash);
+  font-family: var(--font-display); font-weight: 800;
+  font-variation-settings: 'wdth' 100;
+  font-size: clamp(1.75rem, 3.6vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+  transition: color var(--t-ui) var(--ease-out), padding var(--t-ui) var(--ease-out);
+}
+.cityrow small { font-family: var(--font-mono); font-weight: 400; font-size: var(--fs-micro); letter-spacing: 0.08em; }
+.cityrow:hover { color: var(--bone); }
+.cityrow[aria-pressed='true'] { color: var(--signal); padding-left: var(--s-4); }
+.cities__group { margin: var(--s-8) 0 var(--s-2); }
+.cities__group:first-child { margin-top: 0; }
+
+.clubs { margin: 0; padding: 0; list-style: none; }
+.clubs[hidden] { display: none; }
+.clubs__head { display: flex; justify-content: space-between; margin: 0 0 var(--s-6); }
+.clubrow {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-4);
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--smoke);
+  font-size: clamp(1.125rem, 1.7vw, 1.625rem);
+  transition: color var(--t-micro) var(--ease-out), padding var(--t-ui) var(--ease-out);
+}
+.clubrow .micro { flex: none; }
+.clubrow:hover { color: var(--signal); padding-left: var(--s-3); }
+.clubrow:hover .micro { color: var(--signal); }
+
+.tours__preview {
+  position: fixed; left: 0; top: 0; z-index: 60;
+  width: clamp(180px, 16vw, 260px); aspect-ratio: 3 / 4;
+  border-radius: var(--r-card); overflow: hidden;
+  pointer-events: none; opacity: 0;
+  will-change: transform, opacity;
+}
+.tours__preview img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 1023px) {
+  .tours__cities { grid-column: 1 / -1; display: flex; gap: var(--s-2); overflow-x: auto; scrollbar-width: none; padding-bottom: var(--s-4); }
+  .tours__cities::-webkit-scrollbar { display: none; }
+  .tours__cities li { flex: none; }
+  .cityrow { border: 1px solid var(--smoke); border-radius: var(--r-pill); width: auto; padding: var(--s-2) var(--s-4); font-size: 1rem; }
+  .cityrow[aria-pressed='true'] { background: var(--signal); color: var(--bone); border-color: var(--signal); padding-left: var(--s-4); }
+  .cityrow small { display: none; }
+  .cities__group { display: none; }
+  .tours__clubs { grid-column: 1 / -1; margin-top: var(--s-8); min-height: 0; }
+  .tours__grid { margin-top: var(--s-12); }
+  .tours__preview { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tours__bg { display: none; }
+}
