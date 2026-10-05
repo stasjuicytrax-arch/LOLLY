@@ -1,0 +1,5 @@
+assets/video/*-h.mp4
+assets/video/*-v.mp4
+.DS_Store
+Thumbs.db
+node_modules/
