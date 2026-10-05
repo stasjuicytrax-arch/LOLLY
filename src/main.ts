@@ -6,15 +6,24 @@ import './styles/base.css';
 import './styles/components.css';
 import './styles/preloader.css';
 import './styles/hero.css';
+import './styles/sections.css';
 
 import { initSmoothScroll } from './modules/smooth';
 import { runPreloader } from './modules/preloader';
 import { initHero, revealHero } from './modules/hero';
+import { initMarquee } from './modules/marquee';
+import { initAbout } from './modules/about';
+import { initStats } from './modules/stats';
+import { lazyLoops } from './modules/media';
 
 const lenis = initSmoothScroll();
 lenis?.stop();
 
 initHero(lenis);
+initMarquee(lenis);
+initAbout(lenis);
+initStats();
+lazyLoops();
 runPreloader().then(() => {
   lenis?.start();
   revealHero();
