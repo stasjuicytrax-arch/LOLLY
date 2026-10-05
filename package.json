@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/stasjuicytrax-arch/LOLLY#readme",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.2"
   },
