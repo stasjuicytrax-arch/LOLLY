@@ -152,19 +152,25 @@
     display: grid; place-items: center;
     position: fixed; left: 0; top: 0;
     z-index: 120;
-    width: 8px; height: 8px;
-    margin: -4px 0 0 -4px;
-    border-radius: 50%;
-    background: var(--signal);
+    width: 80px; height: 80px;
+    margin: -40px 0 0 -40px;
     pointer-events: none;
-    transition: width var(--t-ui) var(--ease-out), height var(--t-ui) var(--ease-out), margin var(--t-ui) var(--ease-out);
     will-change: transform;
   }
+  /* The dot is the 80px circle scaled down; only transform and opacity animate. */
+  .cursor__dot {
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    background: var(--signal);
+    transform: scale(0.1);
+    transition: transform var(--t-ui) var(--ease-out);
+  }
   .cursor span {
+    position: relative;
     font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--bone); opacity: 0; transition: opacity var(--t-micro);
   }
-  .cursor.is-label { width: 80px; height: 80px; margin: -40px 0 0 -40px; }
+  .cursor.is-label .cursor__dot { transform: scale(1); }
   .cursor.is-label span { opacity: 1; }
   html.has-cursor, html.has-cursor a, html.has-cursor button, html.has-cursor [data-cursor] { cursor: none; }
 }

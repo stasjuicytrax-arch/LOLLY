@@ -6,8 +6,10 @@ export function initCursor(): void {
   const dot = document.createElement('div');
   dot.className = 'cursor';
   dot.setAttribute('aria-hidden', 'true');
+  const disc = document.createElement('i');
+  disc.className = 'cursor__dot';
   const label = document.createElement('span');
-  dot.appendChild(label);
+  dot.append(disc, label);
   document.body.appendChild(dot);
   document.documentElement.classList.add('has-cursor');
 
