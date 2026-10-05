@@ -56,3 +56,23 @@ export const cities: City[] = [
 ];
 
 export const totalVenues = cities.reduce((n, c) => n + c.clubs.length, 0);
+
+export interface Release {
+  title: string;
+  cover: string;
+}
+
+// All 7. Covers are low-res placeholders cropped from the old press kit (docs/CONTENT.md ⚠).
+export const releases: Release[] = [
+  { title: 'Overload', cover: 'overload' },
+  { title: 'Dun Do Drug', cover: 'dun-do-drug' },
+  { title: 'Renew', cover: 'renew' },
+  { title: 'Golden', cover: 'golden' },
+  { title: 'GO', cover: 'go' },
+  { title: 'A Char Pin (Remix)', cover: 'a-char-pin-remix' },
+  { title: 'A Friend', cover: 'a-friend' },
+];
+
+export const links = {
+  soundcloud: 'https://on.soundcloud.com/fvK5nAYr491TwBLv5',
+} as const;

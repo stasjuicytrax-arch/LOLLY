@@ -9,6 +9,7 @@ import './styles/hero.css';
 import './styles/sections.css';
 import './styles/video.css';
 import './styles/places.css';
+import './styles/music.css';
 
 import { initSmoothScroll } from './modules/smooth';
 import { runPreloader } from './modules/preloader';
@@ -23,6 +24,7 @@ import { initLightbox } from './modules/lightbox';
 import { initCursor } from './modules/cursor';
 import { initResidencies } from './modules/residencies';
 import { initTours } from './modules/tours';
+import { initMusic } from './modules/music';
 
 const lenis = initSmoothScroll();
 lenis?.stop();
@@ -36,6 +38,7 @@ initShowreel();
 initWall();
 initResidencies();
 initTours();
+initMusic();
 initLightbox(lenis);
 initCursor();
 runPreloader().then(() => {

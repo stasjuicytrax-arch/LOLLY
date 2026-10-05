@@ -1,10 +1,7 @@
 const desktop = window.matchMedia('(hover: hover) and (pointer: fine)');
 
-/** Video wall: drag-to-scroll track and hover-to-play loops. */
-export function initWall(): void {
-  const track = document.querySelector<HTMLElement>('[data-drag]');
-  if (!track) return;
-
+/** Drag-to-scroll with a mouse; touch keeps native overflow scrolling. */
+function enableDrag(track: HTMLElement): void {
   // Drag with a mouse; touch uses native overflow scrolling.
   let down = false;
   let startX = 0;
@@ -41,7 +38,13 @@ export function initWall(): void {
     true,
   );
 
-  if (!desktop.matches) return;
+}
+
+/** Video wall: drag tracks and hover-to-play loops. */
+export function initWall(): void {
+  document.querySelectorAll<HTMLElement>('[data-drag]').forEach(enableDrag);
+  const track = document.querySelector<HTMLElement>('.wall__track');
+  if (!track || !desktop.matches) return;
   track.querySelectorAll<HTMLElement>('.vcard button').forEach((card) => {
     const v = card.querySelector<HTMLVideoElement>('video');
     if (!v) return;
