@@ -1,0 +1,12 @@
+/* Shared by the site and the PDF press kit (one definition, so a change here reaches both).
+   Waist-up / hip-cut photos: no frame, no radius; the bottom third and both sides dissolve into the page. */
+.photo-dissolve {
+  display: block;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, #000 60%, transparent 100%), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-composite: intersect;
+}

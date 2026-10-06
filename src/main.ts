@@ -12,6 +12,7 @@ import './styles/places.css';
 import './styles/music.css';
 import './styles/finish.css';
 import './styles/mobile.css';
+import './styles/photos.css';
 
 import { initSmoothScroll } from './modules/smooth';
 import { runPreloader } from './modules/preloader';
@@ -29,6 +30,7 @@ import { initTours } from './modules/tours';
 import { initMusic } from './modules/music';
 import { initNav } from './modules/nav';
 import { initBooking } from './modules/booking';
+import { initPdfMenu } from './modules/pdfmenu';
 import { initReveal } from './modules/reveal';
 import { initSwipeHints } from './modules/swipe';
 
@@ -47,6 +49,7 @@ initResidencies();
 initTours();
 initMusic();
 initBooking();
+initPdfMenu();
 initReveal();
 initSwipeHints();
 initNav(lenis);

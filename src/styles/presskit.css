@@ -1,5 +1,6 @@
-/* PDF press kit: 1920×1080 slides on the site's tokens. One slide = one page. */
-@page { size: 1920px 1080px; margin: 0; }
+/* PDF press kit, desktop format: 1920×1080 slides on the site's tokens. One slide = one page.
+   Page size comes from the renderer (scripts/pdf.mjs), not from @page, because the mobile format is 1080×1920. */
+[data-format="mobile"] .d-only, [data-format="desktop"] .m-only { display: none; }
 html, body { margin: 0; background: var(--ink); }
 .pk { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
@@ -47,14 +48,14 @@ html, body { margin: 0; background: var(--ink); }
 .s-about figcaption { margin-top: 12px; }
 
 /* 3 stats */
-.s-stats { background: var(--bone); color: var(--blood); }
+.s-stats { background: var(--paper); color: var(--blood); }
 .s-stats .s-lab { color: var(--wine); }
 .s-stats__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); width: 1180px; row-gap: 40px; column-gap: 48px; }
 .s-stats__list li { border-bottom: 1px solid rgba(54, 4, 5, 0.25); padding-bottom: 28px; }
 .s-stats__list b { display: block; font-family: var(--font-display); font-weight: 800; font-variation-settings: 'wdth' 62; font-size: 250px; line-height: 0.9; letter-spacing: -0.04em; }
 .s-stats__list span { display: block; margin-top: 12px; color: var(--wine); }
-.s-stats__ph { position: absolute; right: 96px; top: 96px; width: 480px; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 20px; }
-.s-stats__ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; transform: scale(1.16); transform-origin: 50% 0; }
+.s-stats__ph { position: absolute; right: 96px; top: 96px; width: 480px; }
+.s-stats__ph img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0; } /* + .photo-dissolve */
 
 /* 4 video */
 .s-video__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 72px; align-items: start; }
@@ -103,10 +104,10 @@ html, body { margin: 0; background: var(--ink); }
 .s-gal__lab { position: absolute; left: 48px; bottom: 44px; margin: 0; padding: 8px 16px; border-radius: 999px; background: rgba(11, 5, 5, 0.6); }
 
 /* 10 press */
-.s-press { background: var(--bone); color: var(--blood); }
+.s-press { background: var(--paper); color: var(--blood); }
 .s-press .s-lab { color: var(--wine); }
 .s-press__row { margin-top: 56px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
-.s-press__row img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0; border-radius: 20px; display: block; background: #fff; }
+.s-press__row img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0; } /* + .photo-dissolve */
 .s-press__dl { position: absolute; left: 96px; bottom: 72px; margin: 0; color: var(--wine); }
 
 /* 11 booking */

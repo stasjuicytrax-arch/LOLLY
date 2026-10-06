@@ -31,5 +31,10 @@
 - Превью продакшн-сборки: `npm run build && npx vite preview` (в Git Bash `--base` не передавать: путь `/LOLLY/` превращается в путь Windows).
 - В настройках репозитория: Pages → Source = «Deploy from a branch» → `gh-pages` / root (однократно, вручную).
 
-## PDF-презентация
-`npm run pdf` — собирает сайт, печатает `presskit.html` (11 слайдов 1920×1080, Playwright + системный Chrome) в `public/LOLLY-presskit.pdf` и копирует в `..LOLLY-presskit.pdf`. После правок контента/дизайна: `npm run pdf`, затем коммит и деплой (PDF лежит в репозитории, кнопка «Download PDF press kit» в блоке Press).
+## PDF-презентации (две: desktop и mobile)
+- `npm run pdf` — собирает сайт, печатает `presskit.html?format=desktop` (1920×1080, 10 слайдов) и `?format=mobile` (1080×1920, 15 слайдов) через Playwright + системный Chrome. Результат: `public/LOLLY-presskit-desktop.pdf` и `public/LOLLY-presskit-mobile.pdf` (каждый ≤ 15 МБ, скрипт падает при превышении) + копии в `..\` (папка DJ LOLLY).
+- **Запускать `npm run pdf` последним шагом после каждого пакета правок сайта**, затем commit, push и деплой, чтобы PDF был актуален.
+- Один шаблон: тексты и данные из `src/data/content.ts`, токены `tokens.css`, `base.css`, общие фото-правила `src/styles/photos.css` (`.photo-dissolve`: фото на белом фоне без рамки, низ и бока растворяются в фон `--paper`). Любое правило фото меняй в `photos.css`: оно попадает и на сайт, и в оба PDF.
+- Адрес сайта — одна переменная `VITE_SITE_URL` в `.env` (читает `src/config.ts`): QR-коды, `og:url`, `canonical`. Текстом адрес нигде не показываем (будет свой домен).
+- На сайте «Download PDF press kit» (блок Press и футер) открывает выбор Desktop / Mobile; на телефоне мобильный предлагается первым.
+- Правило фото: не резать лица, головы и ноги по коленям/бёдрам: либо полный рост, либо поясной кадр с растворением.

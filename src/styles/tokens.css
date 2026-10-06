@@ -8,6 +8,7 @@
   --signal-deep: #c9130d; /* fill behind bone text: 5:1 contrast (AA) */
   --studio: #b63d34;
   --bone: #f0edec;
+  --paper: #f1ebe6; /* background of the white-backdrop press photos (sampled from press-07) */
   --ash: #c6a29d;
   --smoke: rgba(240, 237, 236, 0.08);
 
