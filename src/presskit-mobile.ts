@@ -39,10 +39,9 @@ export function buildMobile(root: HTMLElement): void {
   const slides = [
     // 1 cover
     `<section class="slide m-slide m-cover">
-      <img class="m-cover__bg" src="${asset('img/hero/hero-4-plate.jpg')}" alt="" />
+      <img class="m-cover__bg" src="${asset('img/hero/cover-mobile.jpg')}" alt="LOLLY" />
       <span class="m-cover__word display" aria-hidden="true">LOLLY</span>
-      <img class="m-cover__fig" src="${asset('img/hero/hero-4-cutout.png')}" alt="LOLLY" />
-      <div class="s-shade"></div>
+      <div class="m-cover__grad"></div>
       <header class="m-head micro"><span>[ 00 ] Electronic Press Kit</span><span>01 / ${TOTAL}</span></header>
       <div class="m-body"></div>
       <footer class="m-foot m-foot--cover"><p class="micro">DJ / Producer — Yangon, Myanmar · Est. 2015</p><img src="${LOGO_W}" alt="LOLLY" /></footer>

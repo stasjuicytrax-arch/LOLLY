@@ -24,6 +24,18 @@ try {
     await page.goto(`http://localhost:4179/LOLLY/presskit.html?format=${f.name}`, { waitUntil: 'networkidle' });
     await page.waitForFunction(() => document.documentElement.dataset.ready === '1');
     await page.evaluate(() => Promise.all([...document.images].map((i) => (i.complete ? 0 : new Promise((r) => { i.onload = i.onerror = r; })))));
+    // distortion guard: an <img> whose object-fit is "fill" must show its natural aspect ratio (±1%)
+    const bad = await page.evaluate(() =>
+      [...document.querySelectorAll('.slide img')].flatMap((i) => {
+        const r = i.getBoundingClientRect();
+        if (!r.width || !r.height || !i.naturalWidth) return [];
+        const fit = getComputedStyle(i).objectFit;
+        if (fit === 'cover' || fit === 'contain' || fit === 'scale-down' || fit === 'none') return [];
+        const k = (r.width / r.height) / (i.naturalWidth / i.naturalHeight);
+        return Math.abs(k - 1) > 0.01 ? [i.getAttribute('src') + ' stretched ' + ((k - 1) * 100).toFixed(1) + '%'] : [];
+      }),
+    );
+    if (bad.length) { console.error(`${f.name}: distorted images:`); bad.forEach((b) => console.error('  ' + b)); failed = true; }
     const file = `LOLLY-presskit-${f.name}.pdf`;
     const out = resolve(root, 'public', file);
     mkdirSync(resolve(root, 'public'), { recursive: true });

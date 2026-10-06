@@ -124,3 +124,6 @@ html, body { margin: 0; background: var(--ink); }
 .s-book__row > p { margin: 0; font-size: 16px; line-height: 2; }
 .s-book__qr { display: flex; align-items: center; gap: 20px; }
 .s-book__qr p { margin: 0; }
+
+/* no photo in the press kit is ever stretched: cover by default (specific rules may still use contain) */
+:where(.slide) img { object-fit: cover; }
