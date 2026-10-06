@@ -10,10 +10,9 @@ Minimum version required to store current data is: `+c+`.
     <div class="m-body">${r}</div>
     <footer class="m-foot"><img src="${a?ne:q}" alt="LOLLY" /></footer>
   </section>`}var Y=e=>{let[t,n,r]=W[e];return`<figure class="m-vt"><img src="${H(`video/${t}-poster.jpg`)}" alt="" />${re}<figcaption><b>${n}</b><span class="micro">${r}</span></figcaption><div class="s-qr" data-qr="${G(t)}"></div></figure>`},X=e=>`<div class="m-city"><h3 class="display">${e.name}<small class="micro">${U(e.clubs.length)}</small></h3><ul>${e.clubs.map(e=>`<li>${e}</li>`).join(``)}</ul></div>`,ie=e=>`<figure class="m-rl"><img src="${H(`img/releases/cover-${e.cover}.jpg`)}" alt="" /><figcaption class="micro"><b>${e.title}</b>${e.sub?`<span>${e.sub}</span>`:``}</figcaption></figure>`;function ae(e){let i=[...document.querySelectorAll(`.s-about__text p`)].map(e=>e.innerHTML),a=r.filter(e=>e.country===`Myanmar`),o=r.filter(e=>e.country===`Thailand`),s=a.reduce((e,t)=>e+t.clubs.length,0),c=[`01`,`02`,`03`,`06`,`07`,`08`],l=t.map(e=>`<li><i aria-hidden="true"></i><b>${e.from}${e.to?`–${e.to}`:``}</b><span>${e.club}</span></li>`).join(``);e.innerHTML=[`<section class="slide m-slide m-cover">
-      <img class="m-cover__bg" src="${H(`img/hero/hero-4-plate.jpg`)}" alt="" />
+      <img class="m-cover__bg" src="${H(`img/hero/cover-mobile.jpg`)}" alt="LOLLY" />
       <span class="m-cover__word display" aria-hidden="true">LOLLY</span>
-      <img class="m-cover__fig" src="${H(`img/hero/hero-4-cutout.png`)}" alt="LOLLY" />
-      <div class="s-shade"></div>
+      <div class="m-cover__grad"></div>
       <header class="m-head micro"><span>[ 00 ] Electronic Press Kit</span><span>01 / ${K}</span></header>
       <div class="m-body"></div>
       <footer class="m-foot m-foot--cover"><p class="micro">DJ / Producer — Yangon, Myanmar · Est. 2015</p><img src="${q}" alt="LOLLY" /></footer>
