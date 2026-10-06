@@ -48,7 +48,7 @@
   display: inline-flex; align-items: center; gap: var(--s-2);
   height: 40px; padding: 0 var(--s-6);
   border-radius: var(--r-pill);
-  background: var(--signal); color: var(--bone);
+  background: var(--signal-deep); color: var(--bone);
   font-family: var(--font-mono); font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase;
   transition: background var(--t-ui) var(--ease-out), color var(--t-ui) var(--ease-out);
 }

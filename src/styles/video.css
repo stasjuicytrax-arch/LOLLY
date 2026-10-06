@@ -143,7 +143,7 @@
   cursor: pointer;
   transition: background var(--t-ui) var(--ease-out), border-color var(--t-ui) var(--ease-out);
 }
-.lightbox__close:hover, .lightbox__close:focus-visible { background: var(--signal); border-color: var(--signal); }
+.lightbox__close:hover, .lightbox__close:focus-visible { background: var(--signal-deep); border-color: var(--signal-deep); }
 
 /* ---- Custom cursor (desktop, fine pointer) ---- */
 .cursor { display: none; }
@@ -183,7 +183,7 @@
   .vcard--wide { height: calc(var(--h) * 0.4); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .showreel__media { clip-path: none; position: relative; height: 70svh; }
+  .showreel__media { clip-path: none; position: relative; width: 100%; height: 70svh; }
   .showreel__stage { height: auto; padding-block: var(--s-32) var(--s-16); }
   .showreel__word { display: none; }
   .showreel__label, .showreel__meta { position: static; margin: var(--s-4) var(--field); }

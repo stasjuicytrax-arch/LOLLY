@@ -166,5 +166,5 @@
 .pcard__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
 .pcard__cap { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-3); margin-top: var(--s-4); color: var(--wine); }
 .pcard__cap a { flex: none; padding: var(--s-2) var(--s-4); border: 1px solid var(--blood); border-radius: var(--r-pill); color: var(--blood); transition: background var(--t-ui) var(--ease-out), color var(--t-ui) var(--ease-out); }
-.pcard__cap a:hover, .pcard__cap a:focus-visible { background: var(--signal); border-color: var(--signal); color: var(--bone); }
+.pcard__cap a:hover, .pcard__cap a:focus-visible { background: var(--signal-deep); border-color: var(--signal-deep); color: var(--bone); }
 @media (max-width: 767px) { .pressph { padding-block: var(--s-24); } .pcard { width: 70vw; } }

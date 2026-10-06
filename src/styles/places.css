@@ -38,8 +38,8 @@
 .res__ticks li { font-family: var(--font-mono); font-size: var(--fs-micro); letter-spacing: 0.08em; color: var(--ash); opacity: 0.5; transition: opacity var(--t-ui) var(--ease-out), color var(--t-ui) var(--ease-out); }
 .res__ticks li.is-on { opacity: 1; color: var(--bone); }
 
-/* touch + small screens: native swipe ribbon instead of a pin */
-@media (max-width: 767px), (hover: none) {
+/* touch, small screens and reduced motion: a native swipe ribbon instead of a pinned scrub */
+@media (max-width: 767px), (hover: none), (prefers-reduced-motion: reduce) {
   .res__stage { height: auto; min-height: 0; padding-bottom: var(--s-8); }
   .res__head { flex-direction: column; align-items: flex-start; gap: var(--s-4); }
   .res__title { text-align: left; }
@@ -118,7 +118,7 @@
   .tours__cities::-webkit-scrollbar { display: none; }
   .tours__cities li { flex: none; }
   .cityrow { border: 1px solid var(--smoke); border-radius: var(--r-pill); width: auto; padding: var(--s-2) var(--s-4); font-size: 1rem; }
-  .cityrow[aria-pressed='true'] { background: var(--signal); color: var(--bone); border-color: var(--signal); padding-left: var(--s-4); }
+  .cityrow[aria-pressed='true'] { background: var(--signal-deep); color: var(--bone); border-color: var(--signal-deep); padding-left: var(--s-4); }
   .cityrow small { display: none; }
   .cities__group { display: none; }
   .tours__clubs { grid-column: 1 / -1; margin-top: var(--s-8); min-height: 0; }
