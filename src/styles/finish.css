@@ -126,7 +126,8 @@
 }
 .booking__mail:hover, .booking__mail:focus-visible { color: var(--signal); }
 .booking__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-8) var(--s-12); }
-.booking__direct { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-8); margin: 0; padding: 0; list-style: none; }
+.booking__direct { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-8); margin: 0; padding: 0; list-style: none; font-family: var(--font-mono); font-size: var(--fs-micro); text-transform: uppercase; letter-spacing: 0.08em; }
+.bk-l { color: var(--ash); margin-right: var(--s-2); }
 .booking__direct a, .booking__social a { color: var(--bone); }
 /* every contact target is at least 44×44 */
 .booking__direct a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
@@ -231,7 +232,19 @@
   .booking::before { display: none; }
   .booking__bg { position: relative; inset: auto; z-index: 0; height: 60vh; -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%); mask-image: linear-gradient(to bottom, #000 62%, transparent 100%); }
   .booking__bg img { object-position: 50% 8%; }
-  .booking__wrap { margin-top: -8vh; position: relative; }
-  .booking__mail { font-size: 7.5vw; white-space: nowrap; overflow-wrap: normal; }
+  .booking__wrap { margin-top: -8vh; position: relative; display: block; padding-inline: 16px; }
+  /* rhythm: label 12 / email 24 / button 32 / contacts 24 / social 48 / footer */
+  .booking .label { margin: 0 0 12px; }
+  .booking__mail { width: 100%; font-size: 10.4vw; white-space: nowrap; overflow-wrap: normal; min-height: 0; margin: 0 0 24px; line-height: 1; }
+  .booking__row { display: block; margin: 0; }
+  .booking__row > .btn { margin: 0 0 32px; }
+  .booking__direct { display: block; margin: 0 0 24px; padding: 0; }
+  .booking__direct li { border-bottom: 1px solid var(--smoke); }
+  .booking__direct li:first-child { border-top: 1px solid var(--smoke); }
+  .booking__direct a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; width: 100%; }
+  .bk-l { margin: 0; }
+  .bk-v { color: var(--bone); text-align: right; }
+  .booking__social { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 0; }
+  .booking__social a { width: 100%; justify-content: center; }
   .pressph { margin-bottom: 0; border-radius: 0; }
 }

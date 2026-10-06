@@ -9,8 +9,7 @@
   .stats { margin-top: 40px; padding-bottom: 32px; }
   .showreel { margin-top: 32px; }
   .pressph { margin-top: 40px; }
-  .booking { padding-block: 56px var(--s-8); min-height: 0; }
-  .booking__wrap { gap: var(--s-6); }
+  .booking { padding-block: 0 48px; min-height: 0; }
   .footer { padding-block: var(--s-8); }
 
   /* heading → content: 24px */
