@@ -135,11 +135,12 @@
 
 /* ---- Footer ---- */
 .footer { background: var(--ink-2); padding-block: var(--s-16); }
-.footer__wrap { display: flex; align-items: center; gap: var(--s-8); flex-wrap: wrap; }
-.footer__logo { width: 72px; height: auto; }
-.footer .micro { margin: 0; }
-.footer__top { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; margin-left: auto; color: var(--bone); }
-.footer__top:hover { color: var(--signal); }
+.footer__wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--s-6) var(--s-8); flex-wrap: wrap; }
+.footer__brand, .footer__actions { display: flex; align-items: center; gap: var(--s-6); }
+.footer__logo { width: 56px; height: auto; display: block; }
+.footer .micro { margin: 0; line-height: 1; }
+.footer__link { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; color: var(--bone); }
+.footer__link:hover, .footer__link:focus-visible { color: var(--signal); }
 
 /* ---- Toast ---- */
 .toast {
@@ -156,7 +157,7 @@
 
 @media (max-width: 767px) {
   .booking { padding-block: var(--s-24) var(--s-12); }
-  .footer__top { margin-left: 0; }
+  .footer__wrap, .footer__brand, .footer__actions { flex-direction: column; justify-content: center; text-align: center; gap: var(--s-3); }
 }
 @media (prefers-reduced-motion: reduce) {
   .nav, .toast { transition: none; }
@@ -199,3 +200,4 @@
 @keyframes hint-nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
 @media (prefers-reduced-motion: reduce) { .hint-arrow { animation: none; } }
 .res__stage > .ribbon-bar { align-self: stretch; width: 100%; box-sizing: border-box; margin: 0; padding: var(--s-2) var(--field) 0; }
+@media (max-width: 767px) { .footer .micro { line-height: 1.5; } }
