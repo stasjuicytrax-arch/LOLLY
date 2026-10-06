@@ -108,7 +108,7 @@
 /* Live frames only: 2×2 on desktop (3:2), one column on phones. */
 .gal__i { grid-column: span 6; aspect-ratio: 3 / 2; }
 
-.assets { list-style: none; margin: var(--s-24) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: var(--gutter); }
+.assets { list-style: none; margin: var(--s-24) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: var(--gutter); }
 .asset {
   display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4);
   padding: var(--s-6) 0;

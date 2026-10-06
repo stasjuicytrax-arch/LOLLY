@@ -1,6 +1,6 @@
 import { defineConfig, type Plugin } from 'vite';
 import { readdirSync, rmSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 
 // Full-length videos are published with the site (client decision, 06.10.2026). They are gitignored
 // on main but copied from public/ into dist, then to the gh-pages branch by `npm run deploy`.
@@ -20,6 +20,11 @@ function stripFullVideos(): Plugin {
 // GitHub Pages: https://stasjuicytrax-arch.github.io/LOLLY/ (branch gh-pages, see `npm run deploy`)
 export default defineConfig({
   base: '/LOLLY/',
-  build: { target: 'es2022', assetsDir: 'static' },
+  build: {
+    target: 'es2022',
+    assetsDir: 'static',
+    // two pages: the site and the PDF press-kit source (presskit.html, printed by `npm run pdf`)
+    rollupOptions: { input: { main: resolve(import.meta.dirname, 'index.html'), presskit: resolve(import.meta.dirname, 'presskit.html') } },
+  },
   plugins: [stripFullVideos()],
 });

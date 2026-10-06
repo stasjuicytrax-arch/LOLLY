@@ -30,3 +30,6 @@
 - Полные видео (`aftermovie-h.mp4` и др.) в `main` не лежат (gitignore), но `npm run deploy` публикует их в ветку `gh-pages` вместе с сайтом, и лайтбокс играет их со звуком (решение заказчика). Исключить: `STRIP_FULL_VIDEOS=1 npm run deploy`.
 - Превью продакшн-сборки: `npm run build && npx vite preview` (в Git Bash `--base` не передавать: путь `/LOLLY/` превращается в путь Windows).
 - В настройках репозитория: Pages → Source = «Deploy from a branch» → `gh-pages` / root (однократно, вручную).
+
+## PDF-презентация
+`npm run pdf` — собирает сайт, печатает `presskit.html` (11 слайдов 1920×1080, Playwright + системный Chrome) в `public/LOLLY-presskit.pdf` и копирует в `..LOLLY-presskit.pdf`. После правок контента/дизайна: `npm run pdf`, затем коммит и деплой (PDF лежит в репозитории, кнопка «Download PDF press kit» в блоке Press).
