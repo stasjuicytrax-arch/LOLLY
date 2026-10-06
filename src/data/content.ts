@@ -6,19 +6,24 @@ export interface Residency {
   to?: number;
 }
 
-// All 10, in order.
+// All 10, in order. The range in the headings (2017 → 2026) is computed from this list.
 export const residencies: Residency[] = [
-  { club: 'J One Bar', from: 2015 },
-  { club: '369 Bar — ibis Styles', from: 2016, to: 2019 },
-  { club: "Friend's Fusion Bar", from: 2019 },
-  { club: 'The Maze Club', from: 2019, to: 2023 },
-  { club: 'Nova Bar', from: 2022 },
-  { club: 'Divine', from: 2022 },
-  { club: 'The Bash Yangon', from: 2022, to: 2023 },
-  { club: 'Sika Lounge', from: 2023 },
-  { club: 'THOR Premium Lounge', from: 2023 },
-  { club: 'Arena Entertainment', from: 2024 },
+  { club: 'J One Bar', from: 2017 },
+  { club: '369 Bar — ibis Styles', from: 2018, to: 2021 },
+  { club: "Friend's Fusion Bar", from: 2021 },
+  { club: 'The Maze Club', from: 2021, to: 2025 },
+  { club: 'Nova Bar', from: 2024 },
+  { club: 'Divine', from: 2024 },
+  { club: 'The Bash Yangon', from: 2024, to: 2025 },
+  { club: 'Sika Lounge', from: 2025 },
+  { club: 'THOR Premium Lounge', from: 2025 },
+  { club: 'THOR Club Yangon', from: 2026 },
 ];
+
+export const residencyRange = {
+  from: Math.min(...residencies.map((r) => r.from)),
+  to: Math.max(...residencies.map((r) => r.to ?? r.from)),
+};
 
 export interface City {
   id: string;

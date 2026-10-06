@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { residencies } from '../data/content';
+import { residencies, residencyRange } from '../data/content';
 import { reducedMotion } from './smooth';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -8,6 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 const pad = (n: number) => String(n).padStart(2, '0');
 
 function render(): void {
+  const title = document.querySelector<HTMLElement>('.res__title');
+  if (title) title.innerHTML = `${residencyRange.from} <span class="t-ash">→ ${residencyRange.to}</span>`;
   const track = document.querySelector<HTMLElement>('[data-residencies]');
   const ticks = document.querySelector<HTMLElement>('[data-res-ticks]');
   if (!track || !ticks) return;

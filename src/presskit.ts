@@ -8,7 +8,7 @@ import './styles/presskit.css';
 import './styles/presskit-m.css';
 import QRCode from 'qrcode';
 import { SITE_URL } from './config';
-import { cities, releases, residencies, totalVenues } from './data/content';
+import { cities, releases, residencies, residencyRange, totalVenues } from './data/content';
 import { asset, pad, qrFor, videos } from './presskit-common';
 import { buildMobile } from './presskit-mobile';
 
@@ -40,6 +40,7 @@ function buildDesktop(): void {
         `<figure><div class="ph"><img src="${asset(`video/${f}-poster.jpg`)}" alt="" /></div><figcaption class="micro"><b>${t}</b><span>${d}</span></figcaption><div class="s-qr" data-qr="${qrFor(f)}"></div></figure>`,
     )
     .join('');
+  $('[data-res-range]').innerHTML = `${residencyRange.from} <span class="t-ash">– ${residencyRange.to}</span>`;
   $('[data-res]').innerHTML = residencies
     .map((r, i) => `<li><span class="micro">${pad(i + 1)}</span><b>${r.from}${r.to ? `–${r.to}` : ''}</b><span>${r.club}</span></li>`)
     .join('');

@@ -1,7 +1,7 @@
 # LOLLY — Контент EPK (единственный источник правды для текстов)
 
 Источники: `BIO.docx`, `docs/source/old-presskit.jpg`. Язык сайта — **английский** (аудитория — международные букинг-агентства и промоутеры).
-Пометка ⚠️ = требует подтверждения у артиста до релиза. Названия клубов (Friend's Fusion Bar, Arena Entertainment, Transporter Club) подтверждены заказчиком 06.10.2026.
+Пометка ⚠️ = требует подтверждения у артиста до релиза. Названия клубов (Friend's Fusion Bar, Transporter Club) подтверждены заказчиком 06.10.2026.
 
 ## Идентичность
 - Имя: **LOLLY** (также DJ Lolly Burma)
@@ -30,18 +30,19 @@
 | 7 | original releases |
 
 ## Резидентства (таймлайн) — ВСЕ 10, обязательно
+Годы обновлены заказчиком 06.10.2026 (+2 года, диапазон 2017 → 2026); последняя запись — THOR Club Yangon (2026), бывшая Arena Entertainment. Источник данных на сайте/PDF: `src/data/content.ts`.
 | # | Клуб | Годы |
 |---|---|---|
-| 1 | J One Bar | 2015 |
-| 2 | 369 Bar — ibis Styles | 2016–2019 |
-| 3 | Friend's Fusion Bar | 2019 |
-| 4 | The Maze Club | 2019–2023 |
-| 5 | Nova Bar | 2022 |
-| 6 | Divine | 2022 |
-| 7 | The Bash Yangon | 2022–2023 |
-| 8 | Sika Lounge | 2023 |
-| 9 | THOR Premium Lounge | 2023 |
-| 10 | Arena Entertainment | 2024 |
+| 1 | J One Bar | 2017 |
+| 2 | 369 Bar — ibis Styles | 2018–2021 |
+| 3 | Friend's Fusion Bar | 2021 |
+| 4 | The Maze Club | 2021–2025 |
+| 5 | Nova Bar | 2024 |
+| 6 | Divine | 2024 |
+| 7 | The Bash Yangon | 2024–2025 |
+| 8 | Sika Lounge | 2025 |
+| 9 | THOR Premium Lounge | 2025 |
+| 10 | THOR Club Yangon | 2026 |
 
 ## Клубы и туры — ВСЕ 32 площадки, обязательно
 **Myanmar**
