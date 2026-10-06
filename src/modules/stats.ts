@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 /** Scoreboard digits: each digit is a column of 0–9 that rolls to its value. */
 export function initStats(): void {
   const nums = gsap.utils.toArray<HTMLElement>('[data-count]');
-  const fades = gsap.utils.toArray<HTMLElement>('.stats [data-fade]');
   if (reducedMotion) return;
 
   nums.forEach((el) => {
@@ -52,9 +51,6 @@ export function initStats(): void {
     });
   });
 
-  fades.forEach((el) => {
-    gsap.to(el, { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
-  });
 }
 
 function col_len(col: HTMLElement): number {

@@ -6,7 +6,7 @@ const asset = (p: string) => `${import.meta.env.BASE_URL}assets/${p}`;
 
 // Decorative hover previews. Only the two venue-identified frames are matched to a club
 // (THOR logo is visible in live-04, SONO screen in live-03); everything else cycles.
-const PREVIEWS = ['img/live/live-01.jpg', 'img/live/live-02.jpg', 'img/press/press-04.jpg', 'img/press/press-06.jpg', 'img/press/press-07.jpg', 'img/press/press-08.jpg'];
+const PREVIEWS = ['img/live/live-01.jpg', 'img/live/live-02.jpg', 'img/press/press-04.jpg', 'img/press/press-05.jpg', 'img/press/press-06.jpg', 'img/press/press-07.jpg', 'img/press/press-08.jpg'];
 const MATCHED: Record<string, string> = { 'THOR Premium Lounge': 'img/live/live-04.jpg', 'SONO Club': 'img/live/live-03.jpg' };
 
 const fine = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 1024px)');

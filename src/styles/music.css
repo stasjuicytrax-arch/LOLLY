@@ -105,11 +105,8 @@
 .gal__i { padding: 0; border: 0; background: var(--ink-2); border-radius: var(--r-card); overflow: hidden; cursor: zoom-in; display: block; width: 100%; min-width: 0; }
 .gal__i img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; transition: transform 900ms var(--ease-out); }
 .gal__i:hover img { transform: scale(1.04); }
-/* Row 1: live 3:2 (6 cols) stretches to the two 4:5 portraits (3 cols each). Row 2: three live 3:2 frames (4 cols each). */
-.gal__i--p { grid-column: span 3; aspect-ratio: 4 / 5; }
-.gal__i--l { grid-column: span 6; }
-.gal__i--s { grid-column: span 4; aspect-ratio: 3 / 2; }
-.gal__i--l img, .gal__i--s img { object-position: 50% 50%; }
+/* Live frames only: 2×2 on desktop (3:2), one column on phones. */
+.gal__i { grid-column: span 6; aspect-ratio: 3 / 2; }
 
 .assets { list-style: none; margin: var(--s-24) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: var(--gutter); }
 .asset {
@@ -136,12 +133,12 @@
 }
 @media (max-width: 767px) {
   .lollyism { padding-block: var(--s-24); }
-  .lollyism__video { grid-column: 1 / -1; grid-row: auto; max-width: 320px; }
-  .lollyism__copy { grid-column: 1 / -1; padding-top: 0; }
-  .lollyism__ph--a, .lollyism__ph--b { grid-column: 1 / -1; grid-row: auto; margin-top: 0; }
-  .gal { grid-auto-flow: dense; }
-  .gal__i--p { grid-column: span 6; }
-  .gal__i--l, .gal__i--s { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
+  /* copy, then the teaser (9:16, full width, playing), then one live photo; no reserved empty space */
+  .lollyism__copy { grid-column: 1 / -1; grid-row: 1; padding-top: 0; }
+  .lollyism__video { grid-column: 1 / -1; grid-row: 2; width: 100%; max-width: none; }
+  .lollyism__ph--a { grid-column: 1 / -1; grid-row: 3; margin-top: 0; }
+  .lollyism__ph--b { display: none; }
+  .gal__i { grid-column: 1 / -1; }
   .assets { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -183,3 +180,5 @@
 .pcard__cap a { flex: none; padding: var(--s-2) var(--s-4); border: 1px solid var(--blood); border-radius: var(--r-pill); color: var(--blood); transition: background var(--t-ui) var(--ease-out), color var(--t-ui) var(--ease-out); }
 .pcard__cap a:hover, .pcard__cap a:focus-visible { background: var(--signal-deep); border-color: var(--signal-deep); color: var(--bone); }
 @media (max-width: 767px) { .pressph { padding-block: var(--s-24); } .pcard { width: 70vw; } }
+
+@media (hover: none) { .lollyism__video video { opacity: 1; } }

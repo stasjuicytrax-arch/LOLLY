@@ -28,7 +28,10 @@ import { initTours } from './modules/tours';
 import { initMusic } from './modules/music';
 import { initNav } from './modules/nav';
 import { initBooking } from './modules/booking';
+import { initReveal } from './modules/reveal';
+import { initSwipeHints } from './modules/swipe';
 
+document.documentElement.classList.add('js');
 const lenis = initSmoothScroll();
 lenis?.stop();
 
@@ -43,6 +46,8 @@ initResidencies();
 initTours();
 initMusic();
 initBooking();
+initReveal();
+initSwipeHints();
 initNav(lenis);
 initLightbox(lenis);
 initCursor();

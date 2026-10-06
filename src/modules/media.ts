@@ -5,8 +5,10 @@ const desktop = window.matchMedia('(hover: hover) and (pointer: fine) and (min-w
  * poster (TZ §7: loops start on tap, never on load).
  */
 export function lazyLoops(root: ParentNode = document): void {
-  const videos = root.querySelectorAll<HTMLVideoElement>('video[data-src]:not(.vcard video)');
-  if (!videos.length || !desktop.matches) return;
+  const all = root.querySelectorAll<HTMLVideoElement>('video[data-src]:not(.vcard video)');
+  // Phones stay on posters, except videos that opt in (small muted loops, e.g. the Lollyism teaser).
+  const videos = [...all].filter((v) => desktop.matches || v.hasAttribute('data-autoplay-mobile'));
+  if (!videos.length) return;
   const io = new IntersectionObserver(
     (entries) => {
       for (const e of entries) {

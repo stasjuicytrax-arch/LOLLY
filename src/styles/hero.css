@@ -91,10 +91,11 @@
 [data-reveal] { opacity: 0; transform: translateY(16px); }
 
 @media (max-width: 767px) {
-  /* Mobile uses the vertical press-04 crop: no cut-out, word blends into the photo instead. */
-  .hero__cutout { display: none; }
-  .hero__bg img { object-position: 50% 20%; }
-  .hero__word { top: 21%; font-size: 24vw; --wdth: 74; mix-blend-mode: overlay; }
+  /* Same plate and cut-out as desktop, framed on the figure (centre ~49%). The word sits above the head
+     so LOLLY, the tagline and the bio are all on the first screen. */
+  .hero__bg img { object-position: 49% 50%; }
+  .hero__cutout { height: 74%; translate: -51% 0; }
+  .hero__word { top: 18%; font-size: 24vw; --wdth: 74; }
   .hero__foot { flex-direction: column; align-items: flex-start; }
   .hero__shader { opacity: 0.4; }
 }

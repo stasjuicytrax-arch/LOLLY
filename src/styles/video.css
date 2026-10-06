@@ -176,6 +176,12 @@
 }
 
 @media (max-width: 767px) {
+  /* one card per swipe, ~85% wide; the next one peeks in at the edge, caption stays inside its own card */
+  .wall__track { scroll-snap-type: x mandatory; scroll-padding-inline: var(--field); gap: var(--s-3); }
+  .vcard { scroll-snap-align: start; width: 85vw; height: auto; margin-top: 0 !important; }
+  .vcard--tall, .vcard--mid { aspect-ratio: 9 / 16; }
+  .vcard--wide { aspect-ratio: 16 / 9; height: auto; }
+  .vcard__cap { left: 44px; right: 44px; bottom: var(--s-4); } /* wider than the 28–37px of the next card that peeks in, so no cut-off text shows */
   .showreel__word { font-size: 17vw; }
   .showreel__word--l { right: auto; left: var(--field); top: 22%; }
   .showreel__word--r { left: auto; right: var(--field); top: 78%; }
