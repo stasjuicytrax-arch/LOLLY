@@ -58,6 +58,8 @@ export function initNav(lenis: Lenis | null): void {
         nav.classList.toggle('is-hidden', dy > 0 && y > 120);
         last = y;
       }
+      const hero = document.querySelector<HTMLElement>('.hero');
+      nav.classList.toggle('is-solid', y > (hero ? hero.offsetHeight : window.innerHeight) - 80);
       const max = document.documentElement.scrollHeight - window.innerHeight;
       bar.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
     },

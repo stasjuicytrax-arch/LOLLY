@@ -8,26 +8,37 @@
   background: var(--studio);
 }
 
-/* Layer 1 (photo) and layer 3 (figure) share one box and one crop so they register exactly. */
-.hero__bg,
-.hero__cutout {
+/* Layer 1: the clean plate, full-bleed. */
+.hero__bg {
   position: absolute;
   inset: -4%;
   will-change: transform;
   pointer-events: none;
 }
-.hero__bg picture, .hero__bg img,
-.hero__cutout picture, .hero__cutout img { display: block; width: 100%; height: 100%; }
-.hero__bg img,
-.hero__cutout img { object-fit: cover; object-position: 50% 50%; }
+.hero__bg picture, .hero__bg img { display: block; width: 100%; height: 100%; }
+.hero__bg img { object-fit: cover; object-position: 50% 50%; }
+
+/* Layer 3: the figure. Sized by hero height so the head always clears the nav
+   (84% of 900px leaves ~145px above the head), anchored to the bottom edge. */
+.hero__cutout {
+  position: absolute;
+  left: 50%;
+  bottom: -1%;
+  height: 84%;
+  aspect-ratio: 1678 / 937;
+  translate: -50% 0;
+  will-change: transform;
+  pointer-events: none;
+}
+.hero__cutout picture, .hero__cutout img { display: block; width: 100%; height: 100%; object-fit: contain; }
 
 .hero__shader {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  mix-blend-mode: screen;
-  opacity: 0.5;
+  /* Plain alpha over the plate: a red light that never washes the photo toward pink. */
+  opacity: 0.8;
   pointer-events: none;
 }
 .hero__shade {
@@ -83,7 +94,7 @@
   /* Mobile uses the vertical press-04 crop: no cut-out, word blends into the photo instead. */
   .hero__cutout { display: none; }
   .hero__bg img { object-position: 50% 20%; }
-  .hero__word { top: 19%; font-size: 29vw; --wdth: 80; mix-blend-mode: overlay; }
+  .hero__word { top: 21%; font-size: 24vw; --wdth: 74; mix-blend-mode: overlay; }
   .hero__foot { flex-direction: column; align-items: flex-start; }
   .hero__shader { opacity: 0.4; }
 }

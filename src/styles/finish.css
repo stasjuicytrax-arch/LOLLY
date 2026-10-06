@@ -9,14 +9,23 @@
   align-items: center;
   gap: var(--s-6);
   height: 56px;
+  isolation: isolate;
   padding: 0 var(--s-3) 0 var(--s-4);
   border-radius: var(--r-pill);
+  background: transparent;
+  overflow: hidden;
+  transition: transform var(--t-reveal) var(--ease-out), background-color var(--t-ui) var(--ease-out);
+}
+/* The pill (dark glass) only appears once the hero is behind us. */
+.nav::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
   background: rgba(11, 5, 5, 0.62);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
-  overflow: hidden;
-  transition: transform var(--t-reveal) var(--ease-out);
+  opacity: 0;
+  transition: opacity var(--t-ui) var(--ease-out);
 }
+.nav.is-solid::before { opacity: 1; }
 .nav.is-hidden { transform: translateY(calc(-100% - var(--s-4))); }
 .nav__logo img { display: block; height: 40px; width: auto; aspect-ratio: 1; }
 .nav__links { display: flex; gap: var(--s-8); margin: 0 0 0 auto; padding: 0; list-style: none; }

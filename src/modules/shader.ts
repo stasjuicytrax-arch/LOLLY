@@ -36,8 +36,9 @@ void main(){
   float d = distance(uv * asp, uMouse * asp);
   float pool = exp(-d * d * 7.0);
 
-  float heat = bands * 0.55 + pool * 0.9;
-  vec3 col = mix(vec3(0.70, 0.04, 0.02), vec3(1.0, 0.32, 0.10), pool);
+  // Keep it a red light, never white: capped alpha, no channel pushed to 1 across the whole frame.
+  float heat = clamp(bands * 0.30 + pool * 0.55, 0.0, 0.7);
+  vec3 col = mix(vec3(0.62, 0.03, 0.02), vec3(0.95, 0.20, 0.06), pool);
   gl_FragColor = vec4(col * heat, heat);
 }
 `;
@@ -45,6 +46,13 @@ void main(){
 export function initShader(canvas: HTMLCanvasElement, host: HTMLElement): { mouse: (x: number, y: number) => void } | null {
   const gl = canvas.getContext('webgl', { premultipliedAlpha: true, alpha: true, antialias: false, powerPreference: 'low-power' });
   if (!gl) return null;
+  // A lost context paints as a pale slab: drop the layer instead (GPU reset, too many contexts, headless).
+  let dead = false;
+  canvas.addEventListener('webglcontextlost', (e) => {
+    e.preventDefault();
+    dead = true;
+    canvas.style.display = 'none';
+  });
 
   const compile = (type: number, src: string) => {
     const s = gl.createShader(type)!;
@@ -91,6 +99,7 @@ export function initShader(canvas: HTMLCanvasElement, host: HTMLElement): { mous
   const t0 = performance.now();
 
   const frame = () => {
+    if (dead) return;
     cur.x += (target.x - cur.x) * 0.06;
     cur.y += (target.y - cur.y) * 0.06;
     gl.uniform2f(uMouse, cur.x, cur.y);

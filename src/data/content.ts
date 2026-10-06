@@ -59,18 +59,23 @@ export const totalVenues = cities.reduce((n, c) => n + c.clubs.length, 0);
 
 export interface Release {
   title: string;
+  /** Credit line shown under the title. */
+  sub?: string;
+  /** File stem in assets/img/releases (cover-<stem>.jpg/.webp). */
   cover: string;
+  /** True while only a low-res placeholder exists (cover-<stem>.jpg only). */
+  placeholder?: boolean;
 }
 
-// All 7. Covers are low-res placeholders cropped from the old press kit (docs/CONTENT.md ⚠).
+// All 7. Renew still has the low-res placeholder cropped from the old press kit; the artist will send the cover.
 export const releases: Release[] = [
   { title: 'Overload', cover: 'overload' },
-  { title: 'Dun Do Drug', cover: 'dun-do-drug' },
-  { title: 'Renew', cover: 'renew' },
+  { title: 'Dun Do Drugs', sub: 'Lolly x Zerk', cover: 'dun-do-drugs' },
+  { title: 'Renew', cover: 'renew-lowres', placeholder: true },
   { title: 'Golden', cover: 'golden' },
-  { title: 'GO', cover: 'go' },
-  { title: 'A Char Pin (Remix)', cover: 'a-char-pin-remix' },
-  { title: 'A Friend', cover: 'a-friend' },
+  { title: 'GO', sub: 'BLACKPINK — GO (Lolly Remix)', cover: 'go' },
+  { title: 'A Char Pin', sub: 'Nay Win Remix', cover: 'a-char-pin' },
+  { title: 'A Friend', sub: 'Lolly Bootleg', cover: 'a-friend' },
 ];
 
 export const links = {

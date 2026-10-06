@@ -13,14 +13,17 @@ export function initMusic(): void {
   const track = document.querySelector<HTMLElement>('[data-releases]');
   if (track) {
     track.innerHTML = releases
-      .map(
-        (r, i) => `<article class="rel" style="--i:${i}">
-          <a class="rel__card" href="${links.soundcloud}" target="_blank" rel="noopener" aria-label="${r.title} on SoundCloud" data-cursor="LISTEN">
-            <img src="${asset(`img/releases/cover-${r.cover}-lowres.jpg`)}" alt="${r.title} cover" width="372" height="280" loading="lazy" decoding="async" />
-          </a>
+      .map((r, i) => {
+        const base = `img/releases/cover-${r.cover}`;
+        const picture = r.placeholder
+          ? `<img src="${asset(`${base}.jpg`)}" alt="${r.title} cover (placeholder)" width="372" height="280" loading="lazy" decoding="async" />`
+          : `<picture><source type="image/webp" srcset="${asset(`${base}.webp`)}" /><img src="${asset(`${base}.jpg`)}" alt="${r.title} cover" width="1200" height="1200" loading="lazy" decoding="async" /></picture>`;
+        return `<article class="rel" style="--i:${i}">
+          <a class="rel__card" href="${links.soundcloud}" target="_blank" rel="noopener" aria-label="${r.title}${r.sub ? `, ${r.sub}` : ''} on SoundCloud" data-cursor="LISTEN">${picture}</a>
           <p class="rel__meta micro"><span>${String(i + 1).padStart(2, '0')}</span><b>${r.title}</b></p>
-        </article>`,
-      )
+          ${r.sub ? `<p class="rel__sub micro">${r.sub}</p>` : ''}
+        </article>`;
+      })
       .join('');
 
     if (fine.matches && !reducedMotion) {

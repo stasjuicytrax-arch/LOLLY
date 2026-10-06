@@ -59,8 +59,8 @@
 ⚠️ Конкретных дат выступлений (день/месяц) в материалах нет — только годы резиденций. Если появятся, добавить блок «Upcoming / Recent shows».
 
 ## Релизы — ВСЕ 7
-Overload · Dun Do Drug · Renew · Golden · GO · A Char Pin (Remix) · A Friend
-Обложки: `assets/img/releases/cover-*-lowres.jpg` — вырезаны из старого PDF, **низкое разрешение, плейсхолдер** ⚠️ запросить оригиналы. Стриминг: SoundCloud (ссылка ниже).
+Overload · Dun Do Drugs (Lolly x Zerk) · Renew · Golden · GO (BLACKPINK — GO, Lolly Remix) · A Char Pin (Nay Win Remix) · A Friend (Lolly Bootleg)
+Обложки: `public/assets/img/releases/cover-<slug>.jpg` + `.webp` (1200px, квадрат, центр-кроп) — присланы артистом 06.10.2026 для 6 релизов. **Renew** — всё ещё низкое разрешение `cover-renew-lowres.jpg` (плейсхолдер из старого PDF) ⚠️ ждём оригинал. Стриминг: SoundCloud (ссылка ниже).
 
 ## Медиа-ассеты
 | Файл | Что | Где на сайте |

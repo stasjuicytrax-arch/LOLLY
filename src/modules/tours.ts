@@ -67,9 +67,8 @@ export function initTours(): void {
   }
 
   if (!preview || !fine.matches || reducedMotion) return;
-  const img = document.createElement('img');
-  img.alt = '';
-  preview.appendChild(img);
+  // The <img> exists only once there is something to show (no empty-src placeholder).
+  let img: HTMLImageElement | null = null;
   const x = gsap.quickTo(preview, 'x', { duration: 0.7, ease: 'power3.out' });
   const y = gsap.quickTo(preview, 'y', { duration: 0.7, ease: 'power3.out' });
   const rot = gsap.quickTo(preview, 'rotation', { duration: 0.8, ease: 'power3.out' });
@@ -83,6 +82,11 @@ export function initTours(): void {
   clubsEl.addEventListener('pointerover', (e) => {
     const row = (e.target as Element).closest<HTMLElement>('[data-preview-src]');
     if (!row) return;
+    if (!img) {
+      img = document.createElement('img');
+      img.alt = '';
+      preview.appendChild(img);
+    }
     img.src = asset(row.dataset.previewSrc!);
     gsap.to(preview, { opacity: 1, scale: 1, duration: 0.35, ease: 'expo.out', overwrite: 'auto' });
   });
