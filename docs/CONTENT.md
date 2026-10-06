@@ -1,7 +1,7 @@
 # LOLLY — Контент EPK (единственный источник правды для текстов)
 
 Источники: `BIO.docx`, `docs/source/old-presskit.jpg`. Язык сайта — **английский** (аудитория — международные букинг-агентства и промоутеры).
-Пометка ⚠️ = требует подтверждения у артиста до релиза.
+Пометка ⚠️ = требует подтверждения у артиста до релиза. Названия клубов (Friend's Fusion Bar, Arena Entertainment, Transporter Club) подтверждены заказчиком 06.10.2026.
 
 ## Идентичность
 - Имя: **LOLLY** (также DJ Lolly Burma)
@@ -34,18 +34,18 @@
 |---|---|---|
 | 1 | J One Bar | 2015 |
 | 2 | 369 Bar — ibis Styles | 2016–2019 |
-| 3 | Friend's Fusion Bar ⚠️ (в оригинале «Fushion») | 2019 |
+| 3 | Friend's Fusion Bar | 2019 |
 | 4 | The Maze Club | 2019–2023 |
 | 5 | Nova Bar | 2022 |
 | 6 | Divine | 2022 |
 | 7 | The Bash Yangon | 2022–2023 |
 | 8 | Sika Lounge | 2023 |
 | 9 | THOR Premium Lounge | 2023 |
-| 10 | Arena Entertainment ⚠️ (в оригинале «Entertainmment») | 2024 |
+| 10 | Arena Entertainment | 2024 |
 
 ## Клубы и туры — ВСЕ 32 площадки, обязательно
 **Myanmar**
-- **Yangon (16):** Pioneer Plus · Pioneer Club · ASL · Arena Club · THOR Premium Lounge · Transporter Club ⚠️ (ориг. «Transpoter») · Honey Nest Club · Lair Nine Club · FUSE · The Maze · Domino Lounge · Plan B Club · Hyper · SONO Club · Woodland X Bar · J One Bar
+- **Yangon (16):** Pioneer Plus · Pioneer Club · ASL · Arena Club · THOR Premium Lounge · Transporter Club · Honey Nest Club · Lair Nine Club · FUSE · The Maze · Domino Lounge · Plan B Club · Hyper · SONO Club · Woodland X Bar · J One Bar
 - **Mandalay (3):** Pioneer Club · Taxx Club · Zeus
 - **Mawlamyine (4)** (ориг. «Maw La Myaing»): M Square · Monkey King · Woozy · Glow Bar
 - **Taunggyi (2):** Active Bistro · 272 Club
@@ -74,15 +74,15 @@ Overload · Dun Do Drugs (Lolly x Zerk) · Renew · Golden · GO (BLACKPINK — 
 | `assets/img/fx/gradient-mask-vertical.png` | Маска затемнения | Оверлей вертикальных видео |
 
 ## Видео — ВСЕ 5, обязательно задействовать
-| Исходник | Веб-версия | Формат | Длит. | Содержание | Где на сайте |
-|---|---|---|---|---|---|
-| IMG_8004.MP4 | `aftermovie-h` | 16:9 | 1:42 | Aftermovie: ивент, логотип LOLLY на экране, толпа | **Главный showreel** (clip-path reveal из пилюли в full-bleed) |
-| IMG_9848.MOV | `club-set-h` | 16:9 | 1:20 | Сет в клубе, fisheye с пульта, лазеры | Фон секции «Clubs & Tours» |
-| IMG_5554.MOV | `booth-pov-v` | 9:16 | 0:45 | Вид из-за пульта, красный свет, толпа | Вертикальная карточка в видео-стене / About |
-| IMG_8006.MP4 | `teaser-no-rule-v` | 9:16 | 0:45 | Тизер «NO RULE», монтаж, красный текст | Вертикальная карточка / THE LOLLYISM |
-| IMG_2009.MOV | `IMG_2009` → перекодировать локально | ? | ? (585 МБ) | ⚠️ не просмотрен — открыть и описать | Видео-стена (5-й слот) |
+| Исходник | Веб-версия | Подпись на сайте | Формат | Длит. | Содержание | Где на сайте |
+|---|---|---|---|---|---|---|
+| IMG_8004.MP4 | `aftermovie-h` | Aftermovie | 16:9 | 1:42 | Aftermovie: ивент, логотип LOLLY на экране, толпа | **Главный showreel** (clip-path reveal из пилюли в full-bleed) |
+| IMG_9848.MOV | `club-set-h` | Club set | 16:9 | 1:20 | Сет в клубе, fisheye с пульта, лазеры | Фон секции «Clubs & Tours» |
+| IMG_5554.MOV | `booth-pov-v` | Booth POV | 9:16 | 0:45 | Вид из-за пульта, красный свет, толпа | Вертикальная карточка в видео-стене / About |
+| IMG_8006.MP4 | `teaser-no-rule-v` | Teaser: No Rule | 9:16 | 0:45 | Тизер «NO RULE», монтаж, красный текст | Вертикальная карточка / THE LOLLYISM |
+| IMG_2009.MOV | `extra-2009` | From the floor | 9:16 | 1:49 | Вид с танцпола в толпе, красный свет, сцена вдали | Видео-стена (5-й слот) |
 
-Для каждого видео в `assets/video/`: `*-loop.mp4` (12 с, 720p, без звука — для автоплея), `*-poster.jpg`; полные версии `*.mp4` с звуком в git не коммитятся (тяжёлые) — хостинг: Vimeo/YouTube unlisted или CDN, либо перекодировать локально (см. ТЗ §8).
+Для каждого видео в `assets/video/`: `*-loop.mp4` (12 с, 720p, без звука — для автоплея), `*-poster.jpg`; полные версии `*.mp4` со звуком в git не коммитятся (тяжёлые), но **публикуются на GitHub Pages**: `npm run deploy` включает их в ветку `gh-pages` (решение заказчика 06.10.2026; чтобы исключить: `STRIP_FULL_VIDEOS=1 npm run deploy`).
 
 ## Ссылки
 - SoundCloud: https://on.soundcloud.com/fvK5nAYr491TwBLv5
@@ -95,4 +95,4 @@ Overload · Dun Do Drugs (Lolly x Zerk) · Renew · Golden · GO (BLACKPINK — 
 
 ## Контакты (Booking)
 - Email: **dj.lolly.mt@gmail.com**
-- Phone / WhatsApp: ⚠️ два разных номера в источниках — BIO: `+959 459 181 060`, старый промокит: `+959 696 395 324`. До подтверждения использовать номер из BIO.
+- Phone / WhatsApp: **+959 459 181 060** (номер из BIO, подтверждён заказчиком; старый промокит содержал другой, `+959 696 395 324`, на сайте не используется).

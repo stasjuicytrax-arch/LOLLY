@@ -27,6 +27,6 @@
 Сайт: https://stasjuicytrax-arch.github.io/LOLLY/ — GitHub Pages, источник **ветка `gh-pages`**.
 - Vite `base: '/LOLLY/'`. Скрипт `npm run deploy` = `vite build && gh-pages -d dist --dotfiles` (собирает и публикует `dist` в ветку `gh-pages`).
 - Порядок после каждого изменения: `git push origin main`, затем `npm run deploy`. Проверить живую ссылку.
-- Полные видео (`aftermovie-h.mp4` и др., кроме `*-loop.mp4`) в git не лежат; плагин в `vite.config.ts` вырезает их из `dist`. Чтобы опубликовать их, хостинг нужен отдельный (Vimeo/YouTube/CDN) или `KEEP_FULL_VIDEOS=1 npm run deploy` (≈150 МБ в историю ветки `gh-pages`).
+- Полные видео (`aftermovie-h.mp4` и др.) в `main` не лежат (gitignore), но `npm run deploy` публикует их в ветку `gh-pages` вместе с сайтом, и лайтбокс играет их со звуком (решение заказчика). Исключить: `STRIP_FULL_VIDEOS=1 npm run deploy`.
 - Превью продакшн-сборки: `npm run build && npx vite preview` (в Git Bash `--base` не передавать: путь `/LOLLY/` превращается в путь Windows).
 - В настройках репозитория: Pages → Source = «Deploy from a branch» → `gh-pages` / root (однократно, вручную).

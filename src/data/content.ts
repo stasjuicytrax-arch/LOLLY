@@ -10,14 +10,14 @@ export interface Residency {
 export const residencies: Residency[] = [
   { club: 'J One Bar', from: 2015 },
   { club: '369 Bar — ibis Styles', from: 2016, to: 2019 },
-  { club: "Friend's Fusion Bar", from: 2019 }, // ⚠ source spells "Fushion"
+  { club: "Friend's Fusion Bar", from: 2019 },
   { club: 'The Maze Club', from: 2019, to: 2023 },
   { club: 'Nova Bar', from: 2022 },
   { club: 'Divine', from: 2022 },
   { club: 'The Bash Yangon', from: 2022, to: 2023 },
   { club: 'Sika Lounge', from: 2023 },
   { club: 'THOR Premium Lounge', from: 2023 },
-  { club: 'Arena Entertainment', from: 2024 }, // ⚠ source spells "Entertainmment"
+  { club: 'Arena Entertainment', from: 2024 },
 ];
 
 export interface City {
@@ -35,7 +35,7 @@ export const cities: City[] = [
     name: 'Yangon',
     country: 'Myanmar',
     clubs: [
-      'Pioneer Plus', 'Pioneer Club', 'ASL', 'Arena Club', 'THOR Premium Lounge', 'Transporter Club', // ⚠ "Transpoter"
+      'Pioneer Plus', 'Pioneer Club', 'ASL', 'Arena Club', 'THOR Premium Lounge', 'Transporter Club',
       'Honey Nest Club', 'Lair Nine Club', 'FUSE', 'The Maze', 'Domino Lounge', 'Plan B Club',
       'Hyper', 'SONO Club', 'Woodland X Bar', 'J One Bar',
     ],

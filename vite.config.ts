@@ -2,15 +2,15 @@ import { defineConfig, type Plugin } from 'vite';
 import { readdirSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 
-// Full-length videos live only on the author's machine (CLAUDE.md: never in git). Vite copies
-// everything from public/, so strip them from dist; loops and posters stay.
-// Set KEEP_FULL_VIDEOS=1 to publish them anyway.
+// Full-length videos are published with the site (client decision, 06.10.2026). They are gitignored
+// on main but copied from public/ into dist, then to the gh-pages branch by `npm run deploy`.
+// Set STRIP_FULL_VIDEOS=1 to leave them out.
 function stripFullVideos(): Plugin {
   return {
     name: 'strip-full-videos',
     apply: 'build',
     closeBundle() {
-      if (process.env.KEEP_FULL_VIDEOS) return;
+      if (!process.env.STRIP_FULL_VIDEOS) return;
       const dir = join('dist', 'assets', 'video');
       for (const f of readdirSync(dir)) if (f.endsWith('.mp4') && !f.endsWith('-loop.mp4')) rmSync(join(dir, f));
     },

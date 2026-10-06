@@ -4,7 +4,7 @@ import type Lenis from 'lenis';
  * One native <dialog> for everything: full videos (with sound) and photos.
  * Triggers: [data-lightbox-video] (data-full, data-loop, data-poster)
  *           [data-lightbox-image] (data-full, data-alt)
- * If a full video is not hosted yet, the muted loop plays instead and a note says so.
+ * Full videos are published with the site. If one ever fails to load, the muted loop plays instead (silently).
  */
 export function initLightbox(lenis: Lenis | null): void {
   const dlg = document.createElement('dialog');
@@ -68,10 +68,6 @@ export function initLightbox(lenis: Lenis | null): void {
         v.controls = false;
         v.src = t.dataset.loop!;
         void v.play().catch(() => undefined);
-        const note = document.createElement('p');
-        note.className = 'lightbox__note micro';
-        note.textContent = 'Preview loop — the full version is not hosted yet';
-        stage.appendChild(note);
       },
       { once: true },
     );
