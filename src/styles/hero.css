@@ -56,7 +56,7 @@
 }
 .hero__word .char-mask { display: inline-block; overflow: hidden; padding-block: 0.04em; margin-block: -0.04em; }
 
-.hero__tl, .hero__tr { position: absolute; top: var(--field); margin: 0; color: var(--bone); }
+.hero__tl, .hero__tr { position: absolute; top: calc(var(--field) + 56px); margin: 0; color: var(--bone); }
 .hero__tl { left: var(--field); }
 .hero__tr { right: var(--field); }
 

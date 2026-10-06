@@ -10,6 +10,7 @@ import './styles/sections.css';
 import './styles/video.css';
 import './styles/places.css';
 import './styles/music.css';
+import './styles/finish.css';
 
 import { initSmoothScroll } from './modules/smooth';
 import { runPreloader } from './modules/preloader';
@@ -25,6 +26,8 @@ import { initCursor } from './modules/cursor';
 import { initResidencies } from './modules/residencies';
 import { initTours } from './modules/tours';
 import { initMusic } from './modules/music';
+import { initNav } from './modules/nav';
+import { initBooking } from './modules/booking';
 
 const lenis = initSmoothScroll();
 lenis?.stop();
@@ -39,6 +42,8 @@ initWall();
 initResidencies();
 initTours();
 initMusic();
+initBooking();
+initNav(lenis);
 initLightbox(lenis);
 initCursor();
 runPreloader().then(() => {

@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "vite build && gh-pages -d dist --dotfiles"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/stasjuicytrax-arch/LOLLY#readme",
   "devDependencies": {
+    "@types/node": "^26.6.4",
     "gh-pages": "^6.3.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.2"
