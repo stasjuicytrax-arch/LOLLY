@@ -118,7 +118,7 @@
 .stat__plus { display: block; }
 .stats__photo { grid-column: 9 / span 4; margin: 0; align-self: start; }
 /* Static, frameless: the lower third dissolves into the section instead of ending in a hard cut at the hips. */
-.stats__photo img { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0%; } /* + .photo-dissolve (photos.css) */
+.stats__photo img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0%; }
 
 .js [data-fade] { opacity: 0; transform: translateY(32px); }
 

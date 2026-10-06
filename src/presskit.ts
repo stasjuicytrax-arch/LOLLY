@@ -15,7 +15,7 @@ import { buildMobile } from './presskit-mobile';
 /**
  * One template, two formats: presskit.html?format=desktop (1920×1080) and ?format=mobile (1080×1920).
  * Desktop slides are static markup in presskit.html; mobile slides are built here from the same data
- * (src/data/content.ts) and the same copy. Shared look: tokens.css, base.css, photos.css (.photo-dissolve).
+ * (src/data/content.ts) and the same copy. Shared look: tokens.css, base.css, photos.css; baked press-XX-dissolve.jpg for fading photos.
  */
 const mobile = document.documentElement.dataset.format === 'mobile';
 const $ = (s: string) => document.querySelector<HTMLElement>(s)!;

@@ -40,7 +40,7 @@
 .m-facts dd { margin: 0; }
 
 /* 4 stats: photo top 56%, dissolving; numbers 2×3 in the rest, no overlap */
-.m-stats__ph { position: absolute; z-index: 0; top: 0; left: 0; width: 100%; height: 1090px; object-fit: cover; object-position: 50% 0; }
+.m-stats__ph { position: absolute; z-index: 0; top: 70px; left: 50%; translate: -50% 0; width: auto; height: 1090px; aspect-ratio: 2 / 3; object-fit: cover; } /* whole baked-dissolve photo, so the fade is visible */
 .m-stats .m-body { padding: 1020px 72px 0; }
 .m-stats__list { list-style: none; margin: 0; padding: 0; height: 100%; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); column-gap: 48px; }
 .m-stats__list li { display: grid; align-content: center; border-bottom: 2px solid rgba(54, 4, 5, 0.22); }
@@ -117,7 +117,7 @@
 /* 11 press photos 2×3 on paper */
 .m-press .m-body { padding: 30px 72px 12px; }
 .m-press__grid { height: 100%; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); gap: 8px 24px; }
-.m-press__grid img { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: 50% 0; }
+.m-press__grid img { width: 100%; height: 100%; min-height: 0; object-fit: contain; object-position: 50% 0; } /* whole baked-dissolve photo; its edges are the paper colour */
 
 /* 12 booking */
 .m-book { background: var(--signal); }

@@ -73,7 +73,7 @@ export function buildMobile(root: HTMLElement): void {
          <li><b>10+</b><span>years behind the decks</span></li><li><b>10</b><span>club residencies</span></li>
          <li><b>32</b><span>venues played</span></li><li><b>8</b><span>cities</span></li>
          <li><b>2</b><span>countries</span></li><li><b>7</b><span>original releases</span></li></ol>`,
-      `<img class="photo-dissolve photo-dissolve--bottom m-stats__ph" src="${asset('img/press/press-07.jpg')}" alt="" />`,
+      `<img class="m-stats__ph" src="${asset('img/press/press-07-dissolve.jpg')}" alt="" />`,
       true,
     ),
     // 5 video: showreel on top, four posters 2×2
@@ -106,7 +106,7 @@ export function buildMobile(root: HTMLElement): void {
       `<div class="m-stage__grid"><img class="m-stage__big" src="${asset('img/live/live-01.jpg')}" alt="" /><img src="${asset('img/live/live-02.jpg')}" alt="" /><img src="${asset('img/live/live-03.jpg')}" alt="" /><img src="${asset('img/live/live-04.jpg')}" alt="" /></div>`,
     ),
     // 11 press photos 2×3 on paper
-    slide(11, 'Press photos', 'm-press', `<div class="m-press__grid">${pressList.map((n) => `<img class="photo-dissolve" src="${asset(`img/press/press-${n}.jpg`)}" alt="" />`).join('')}</div>`, '', true),
+    slide(11, 'Press photos', 'm-press', `<div class="m-press__grid">${pressList.map((n) => `<img src="${asset(`img/press/press-${n}-dissolve.jpg`)}" alt="" />`).join('')}</div>`, '', true),
     // 12 booking
     slide(
       12,

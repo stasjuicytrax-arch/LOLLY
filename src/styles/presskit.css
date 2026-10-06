@@ -55,7 +55,7 @@ html, body { margin: 0; background: var(--ink); }
 .s-stats__list b { display: block; font-family: var(--font-display); font-weight: 800; font-variation-settings: 'wdth' 62; font-size: 300px; line-height: 0.9; letter-spacing: -0.04em; }
 .s-stats__list span { display: block; margin-top: 12px; color: var(--wine); }
 .s-stats__ph { position: absolute; right: 96px; top: 60px; width: 520px; }
-.s-stats__ph img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0; } /* + .photo-dissolve */
+.s-stats__ph img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0; }
 
 /* 4 video */
 .s-video__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 72px; align-items: start; }
@@ -111,7 +111,7 @@ html, body { margin: 0; background: var(--ink); }
 .s-press__h { font-size: 196px; color: var(--blood); line-height: 0.82; white-space: nowrap; }
 .s-press__h span { color: var(--wine); }
 .s-press__row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
-.s-press__row img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0; } /* + .photo-dissolve */
+.s-press__row img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0; }
 .s-press__dl { margin: 0; color: var(--wine); }
 
 /* 11 booking */
