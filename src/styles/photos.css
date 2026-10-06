@@ -27,3 +27,9 @@
 
 /* bottom-only dissolve for full-bleed photos (no side fade needed) */
 .photo-dissolve--bottom { -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%); mask-image: linear-gradient(to bottom, #000 62%, transparent 100%); -webkit-mask-composite: initial; mask-composite: initial; }
+
+/* spiral lollipop from the logo, on signal red, slowly turning */
+.pill--spiral { background: var(--signal); display: inline-grid; place-items: center; }
+.pill--spiral > img { position: static; width: auto; height: 84%; aspect-ratio: 1; object-fit: contain; animation: pill-spin 12s linear infinite; }
+@keyframes pill-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .pill--spiral > img { animation: none; } }
