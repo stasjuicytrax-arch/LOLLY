@@ -63,15 +63,13 @@ export interface Release {
   sub?: string;
   /** File stem in assets/img/releases (cover-<stem>.jpg/.webp). */
   cover: string;
-  /** No artwork yet: render a typographic cover instead of a photo. */
-  typographic?: boolean;
 }
 
-// All 7. Renew has no artwork yet, so it gets a typographic cover until the artist sends one.
+// All 7. Covers: 6 from the artist, Renew from its SoundCloud artwork (500px, the largest SoundCloud serves).
 export const releases: Release[] = [
   { title: 'Overload', cover: 'overload' },
   { title: 'Dun Do Drugs', sub: 'Lolly x Zerk', cover: 'dun-do-drugs' },
-  { title: 'Renew', cover: 'renew', typographic: true },
+  { title: 'Renew', cover: 'renew' },
   { title: 'Golden', cover: 'golden' },
   { title: 'GO', sub: 'BLACKPINK — GO (Lolly Remix)', cover: 'go' },
   { title: 'A Char Pin', sub: 'Nay Win Remix', cover: 'a-char-pin' },

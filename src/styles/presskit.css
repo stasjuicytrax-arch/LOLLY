@@ -72,18 +72,17 @@ html, body { margin: 0; background: var(--ink); }
 .s-res__list li > span:last-child { font-size: 30px; }
 .s-res .s-h { font-size: 96px; }
 
-/* 6-7 clubs */
-.s-clubs .s-h { font-size: 88px; }
-.s-clubs__cols { margin-top: 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 56px; align-items: start; }
-.s-clubs__cols--one { display: block; }
-.cblk h3 { font-size: 40px; margin: 0 0 12px; font-variation-settings: 'wdth' 100; }
-.cblk h3 small { display: block; margin-top: 8px; color: var(--ash); font-family: var(--font-mono); font-weight: 400; letter-spacing: 0.08em; font-size: 13px; }
+/* 6 clubs: Yangon on top (16 in four columns), the other seven cities underneath */
+.s-clubs .s-h { font-size: 80px; }
+.s-clubs__yg { margin-top: 36px; }
+.s-clubs__yg ul { columns: 4; column-gap: 40px; }
+.s-clubs__cols { margin-top: 36px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 0 28px; align-items: start; }
+.cblk h3 { font-size: 30px; margin: 0 0 10px; font-variation-settings: 'wdth' 100; line-height: 0.95; min-height: 2em; }
+.cblk h3 small { display: block; margin-top: 6px; color: var(--ash); font-family: var(--font-mono); font-weight: 400; letter-spacing: 0.08em; font-size: 12px; }
+.s-clubs__yg .cblk h3 { min-height: 0; font-size: 40px; }
 .cblk ul { list-style: none; margin: 0; padding: 0; }
-.cblk li { padding: 10px 0; border-bottom: 1px solid var(--smoke); font-size: 23px; }
-.s-clubs__cols--one .cblk h3 { margin-bottom: 20px; }
-.s-clubs__cols--one .cblk ul { columns: 4; column-gap: 56px; }
-.s-clubs__cols--one .cblk { display: block; }
-.s-clubs__cols--one .cblk li { break-inside: avoid; font-size: 28px; padding: 16px 0; }
+.cblk li { padding: 8px 0; border-bottom: 1px solid var(--smoke); font-size: 20px; break-inside: avoid; }
+.s-clubs__yg .cblk li { font-size: 24px; padding: 11px 0; }
 
 /* 8 releases */
 .s-rel__row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 24px; margin-top: 150px; align-items: start; }

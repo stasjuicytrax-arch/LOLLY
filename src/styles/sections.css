@@ -81,12 +81,15 @@
 .about__facts > div { display: flex; justify-content: space-between; gap: var(--s-6); padding-block: var(--s-3); border-bottom: 1px solid var(--smoke); }
 .about__facts dt { color: var(--ash); }
 .about__facts dd { margin: 0; color: var(--bone); text-align: right; }
+.about__founder dt, .about__founder dd { color: var(--bone); font-weight: 500; }
+.about__founder { border-bottom-color: var(--signal) !important; }
+.about__founder dd span { color: var(--ash); font-weight: 400; }
 
 /* ---- 4 · Stats (light flash) ---- */
 .stats {
   margin-top: var(--section-gap);
   padding-block: var(--s-32) var(--s-32);
-  background: var(--bone);
+  background: #f1ebe6; /* sampled from the edges of press-07 so the photo has no visible rectangle */
   color: var(--blood);
   border-radius: 0 0 var(--r-section) var(--r-section);
 }
@@ -125,10 +128,9 @@
 .odo__col { display: flex; flex-direction: column; will-change: transform; }
 .odo__col > span { display: block; height: 0.9em; line-height: 0.9; }
 .stat__plus { display: block; }
-.stats__photo { grid-column: 9 / span 4; margin: 0; position: sticky; top: var(--s-16); }
-/* Deliberate waist-up crop of a photo that is cut at the hips: 4:5 frame, anchored at the top (air above the head), zoomed so the frame ends at the belt. */
-.stats__photo { aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--r-card); }
-.stats__photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transform: scale(1.16); transform-origin: 50% 0%; }
+.stats__photo { grid-column: 9 / span 4; margin: 0; align-self: start; }
+/* Static, frameless: the lower third dissolves into the section instead of ending in a hard cut at the hips. */
+.stats__photo img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0%; -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%); mask-image: linear-gradient(to bottom, #000 60%, transparent 100%); }
 
 .js [data-fade] { opacity: 0; transform: translateY(32px); }
 
@@ -136,8 +138,8 @@
   .about__text { grid-column: 1 / span 7; }
   .about__photo { grid-column: 8 / -1; }
   .stats__list { grid-column: 1 / -1; }
-  .stats__photo { grid-column: 1 / -1; position: static; margin-top: var(--s-24); }
-  .stats__photo { max-width: 460px; width: 100%; margin-inline: auto; }
+  .stats__photo { grid-column: 1 / -1; grid-row: 1; max-width: 420px; width: 100%; margin: 0 auto var(--s-8); }
+  .stats__list { grid-row: 2; }
 }
 @media (max-width: 767px) {
   .line--2 { padding-left: 0; }

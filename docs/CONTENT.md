@@ -8,7 +8,7 @@
 - Роль: DJ / Producer
 - База: Yangon, Myanmar
 - Опыт: 10+ лет (первая резиденция — 2015)
-- Основательница ивент-серии **THE LOLLYISM**
+- Основательница ивент-серии **THE LOLLYISM** (на сайте отдельной секции нет; упомянута в About, строка FOUNDER)
 - Образование: Music Production Program, AES Myanmar
 - Жанры: Bass · Drum & Bass · Jersey Club · Trap · Bounce · Midtempo · House
 
@@ -60,7 +60,7 @@
 
 ## Релизы — ВСЕ 7
 Overload · Dun Do Drugs (Lolly x Zerk) · Renew · Golden · GO (BLACKPINK — GO, Lolly Remix) · A Char Pin (Nay Win Remix) · A Friend (Lolly Bootleg)
-Обложки: `public/assets/img/releases/cover-<slug>.jpg` + `.webp` (1200px, квадрат, центр-кроп) — присланы артистом 06.10.2026 для 6 релизов. **Renew** — обложки нет: на сайте типографская обложка (слово RENEW на красно-бордовом градиенте), файл-заглушка удалён ⚠️ ждём оригинал от артиста. Стриминг: SoundCloud (ссылка ниже).
+Обложки: `public/assets/img/releases/cover-<slug>.jpg` + `.webp` (1200px, квадрат, центр-кроп) — присланы артистом 06.10.2026 для 6 релизов. **Renew** — обложка взята с SoundCloud (artwork 500×500, максимум, что отдаёт SoundCloud). Остальные 6 присланы артистом. Стриминг: SoundCloud (ссылка ниже).
 
 ## Медиа-ассеты
 | Файл | Что | Где на сайте |
@@ -69,7 +69,7 @@ Overload · Dun Do Drugs (Lolly x Zerk) · Renew · Golden · GO (BLACKPINK — 
 | `assets/img/hero/hero-3-alt-red.jpg` | Альт hero, насыщенный красный | Booking-финал / OG-image |
 | `assets/img/hero/hero-2-alt-white.jpg` | Альт на белом | Светлая секция-вспышка |
 | `assets/img/press/press-01…08.jpg` | Пресс-фото (01–03 жёлто-синий боди, 04–05 красный фон, 06 чёрный блейзер, 07 белый жакет, 08 зелёный) | Галерея, пилюли, hover-превью |
-| `assets/img/live/live-01…04.jpg` | Фото с выступлений (из BIO) | About, клубы, THE LOLLYISM |
+| `assets/img/live/live-01…04.jpg` | Фото с выступлений (из BIO) | About, галерея |
 | `assets/logo/lolly-logo-white.png` / `-black.png` | Логотип 1536×1536 PNG | Прелоадер, навбар, футер, press-download |
 | `assets/img/fx/gradient-mask-vertical.png` | Маска затемнения | Оверлей вертикальных видео |
 
@@ -87,7 +87,8 @@ Overload · Dun Do Drugs (Lolly x Zerk) · Renew · Golden · GO (BLACKPINK — 
 ## Ссылки
 - SoundCloud: https://on.soundcloud.com/fvK5nAYr491TwBLv5
 - Instagram: https://www.instagram.com/lolly_mmofficial
-- Facebook: https://www.facebook.com/share/1AVsyK2AwL/
+- Facebook: https://www.facebook.com/share/18cL1QD3V1/
+- Telegram: https://t.me/lollymmofficial (@lollymmofficial)
 - TikTok: https://www.tiktok.com/@djlollyburma
 - Biography & Tour (Drive): https://drive.google.com/file/d/1HewkEk6FfdTRfnxPPUd-vKVBhwdJG5_q/view
 - More Profile Photos (Drive): https://drive.google.com/drive/folders/1jlLRhh1bVHpxd4XC2H31brCdC_-7gPX-
@@ -95,4 +96,7 @@ Overload · Dun Do Drugs (Lolly x Zerk) · Renew · Golden · GO (BLACKPINK — 
 
 ## Контакты (Booking)
 - Email: **dj.lolly.mt@gmail.com**
-- Phone / WhatsApp: **+959 459 181 060** (номер из BIO, подтверждён заказчиком; старый промокит содержал другой, `+959 696 395 324`, на сайте не используется).
+- Phone: **+959 459 181 060** → `tel:+959459181060`
+- WhatsApp: https://wa.me/959459181060
+- Viber: `viber://chat?number=%2B959459181060` (номер показан текстом: без Viber ссылка не откроется)
+- Порядок в Booking: Email, Phone, WhatsApp, Telegram, Viber, затем Instagram, Facebook, TikTok, SoundCloud.

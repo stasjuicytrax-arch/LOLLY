@@ -6,7 +6,7 @@ const desktop = window.matchMedia('(hover: hover) and (pointer: fine) and (min-w
  */
 export function lazyLoops(root: ParentNode = document): void {
   const all = root.querySelectorAll<HTMLVideoElement>('video[data-src]:not(.vcard video)');
-  // Phones stay on posters, except videos that opt in (small muted loops, e.g. the Lollyism teaser).
+  // Phones stay on posters, except videos that opt in (small muted loops).
   const videos = [...all].filter((v) => desktop.matches || v.hasAttribute('data-autoplay-mobile'));
   if (!videos.length) return;
   const io = new IntersectionObserver(

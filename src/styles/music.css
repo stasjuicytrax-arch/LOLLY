@@ -49,48 +49,9 @@
 .rel__meta b { font-weight: 500; color: var(--bone); text-align: right; }
 .rel__sub { margin: var(--s-2) 0 0; text-align: right; opacity: 0.8; }
 
-.music__player { margin-top: var(--s-24); max-width: 1000px; }
+.music__player { margin: var(--s-24) auto 0; width: 100%; max-width: 1200px; }
 .music__player .micro { margin: 0 0 var(--s-4); }
-.music__player iframe { display: block; border: 0; border-radius: var(--r-card); background: var(--ink-2); min-height: 420px; }
-
-/* ---- 10 · The Lollyism ---- */
-.lollyism {
-  position: relative;
-  margin-top: var(--section-gap);
-  padding-block: var(--s-32);
-  background: var(--blood);
-  border-radius: var(--r-section);
-  overflow: hidden;
-  isolation: isolate;
-}
-.lollyism__ghost {
-  position: absolute; left: 50%; top: 50%;
-  translate: -50% -50%;
-  z-index: -1;
-  font-size: min(26vw, 30rem);
-  font-variation-settings: 'wdth' 125;
-  white-space: nowrap;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(198, 162, 157, 0.28);
-  user-select: none;
-}
-.lollyism__grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gutter); row-gap: var(--s-12); align-items: start; }
-.lollyism__video {
-  grid-column: 1 / span 4; grid-row: 1 / span 2;
-  position: relative; aspect-ratio: 9 / 16;
-  padding: 0; border: 0; border-radius: var(--r-card); overflow: hidden;
-  background: var(--ink); cursor: pointer;
-}
-.lollyism__video img, .lollyism__video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.lollyism__video video { opacity: 0; transition: opacity var(--t-ui); }
-.lollyism__video:hover video { opacity: 1; }
-.lollyism__copy { grid-column: 7 / span 5; padding-top: var(--s-12); }
-.lollyism__copy p:not(.label) { max-width: 44ch; margin: var(--s-8) 0 0; }
-.lollyism__title { font-size: var(--fs-h1); font-variation-settings: 'wdth' 100; }
-.lollyism__ph { margin: 0; }
-.lollyism__ph img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--r-card); }
-.lollyism__ph--a { grid-column: 6 / span 4; grid-row: 2; align-self: end; }
-.lollyism__ph--b { grid-column: 10 / span 3; grid-row: 2; margin-top: var(--s-32); }
+.music__player iframe { display: block; width: 100%; border: 0; border-radius: var(--r-card); background: var(--ink-2); min-height: 420px; }
 
 /* ---- 11 · Gallery ---- */
 .gallery { margin-top: var(--section-gap); }
@@ -125,19 +86,9 @@
 .pressph .asset:hover, .pressph .asset:focus-visible { color: var(--signal); }
 
 @media (max-width: 1023px) {
-  .lollyism__video { grid-column: 1 / span 6; }
-  .lollyism__copy { grid-column: 7 / -1; }
-  .lollyism__ph--a { grid-column: 7 / -1; }
-  .lollyism__ph--b { grid-column: 1 / span 6; grid-row: 3; margin-top: 0; }
   .assets { grid-template-columns: 1fr; }
 }
 @media (max-width: 767px) {
-  .lollyism { padding-block: var(--s-24); }
-  /* copy, then the teaser (9:16, full width, playing), then one live photo; no reserved empty space */
-  .lollyism__copy { grid-column: 1 / -1; grid-row: 1; padding-top: 0; }
-  .lollyism__video { grid-column: 1 / -1; grid-row: 2; width: 100%; max-width: none; }
-  .lollyism__ph--a { grid-column: 1 / -1; grid-row: 3; margin-top: 0; }
-  .lollyism__ph--b { display: none; }
   .gal__i { grid-column: 1 / -1; }
   .assets { grid-template-columns: 1fr; }
 }
@@ -181,4 +132,3 @@
 .pcard__cap a:hover, .pcard__cap a:focus-visible { background: var(--signal-deep); border-color: var(--signal-deep); color: var(--bone); }
 @media (max-width: 767px) { .pressph { padding-block: var(--s-24); } .pcard { width: 70vw; } }
 
-@media (hover: none) { .lollyism__video video { opacity: 1; } }

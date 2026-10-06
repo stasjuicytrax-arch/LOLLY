@@ -118,12 +118,12 @@
 }
 .booking__mail:hover, .booking__mail:focus-visible { color: var(--signal); }
 .booking__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-8) var(--s-12); }
-.booking__phone { display: flex; gap: var(--s-8); margin: 0; padding: 0; list-style: none; }
-.booking__phone a, .booking__social a { color: var(--bone); }
+.booking__direct { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-8); margin: 0; padding: 0; list-style: none; }
+.booking__direct a, .booking__social a { color: var(--bone); }
 /* every contact target is at least 44×44 */
-.booking__phone a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
-.booking__phone a:hover, .booking__social a:hover { color: var(--signal); }
-.booking__social { display: flex; flex-wrap: wrap; gap: var(--s-3); margin: 0 0 0 auto; padding: 0; list-style: none; }
+.booking__direct a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
+.booking__direct a:hover, .booking__social a:hover { color: var(--signal); }
+.booking__social { display: flex; flex-wrap: wrap; gap: var(--s-3); margin: 0; padding: 0; list-style: none; }
 .booking__social a {
   display: inline-flex; align-items: center; min-height: 44px; padding: var(--s-3) var(--s-6);
   border: 1px solid var(--smoke); border-radius: var(--r-pill);
@@ -156,7 +156,6 @@
 
 @media (max-width: 767px) {
   .booking { padding-block: var(--s-24) var(--s-12); }
-  .booking__social { margin-left: 0; }
   .footer__top { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -167,3 +166,10 @@
 .swipe { display: none; margin: 0 var(--field) var(--s-3); }
 @media (hover: none) { .swipe { display: block; } }
 .tours__grid > .swipe { grid-column: 1 / -1; margin-inline: 0; }
+
+.footer__links { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-6); margin: 0 0 0 var(--s-8); padding: 0; list-style: none; }
+.footer__links a, .menu__contact a { display: inline-flex; align-items: center; min-height: 44px; color: var(--bone); }
+.footer__links a:hover, .menu__contact a:hover { color: var(--signal); }
+.menu__contact { margin: var(--s-8) 0 0; padding: 0; list-style: none; }
+.menu .menu__contact a { font-family: var(--font-mono); font-size: var(--fs-micro); border: 0; padding: 0; text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.5; }
+@media (max-width: 767px) { .footer__links { margin-left: 0; } }

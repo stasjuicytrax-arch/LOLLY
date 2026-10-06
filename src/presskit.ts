@@ -43,9 +43,7 @@ $('[data-clubs-b]').innerHTML = cities.slice(1).map(block).join('');
 
 $('[data-rel]').innerHTML = releases
   .map((r) =>
-    r.typographic
-      ? `<figure><div class="cov cov--type"><span class="display">${r.title}</span><i class="micro">LOLLY</i></div><figcaption class="micro"><b>${r.title}</b></figcaption></figure>`
-      : `<figure><div class="cov"><img src="${asset(`img/releases/cover-${r.cover}.jpg`)}" alt="" /></div><figcaption class="micro"><b>${r.title}</b>${r.sub ? `<span>${r.sub}</span>` : ''}</figcaption></figure>`,
+    `<figure><div class="cov"><img src="${asset(`img/releases/cover-${r.cover}.jpg`)}" alt="" /></div><figcaption class="micro"><b>${r.title}</b>${r.sub ? `<span>${r.sub}</span>` : ''}</figcaption></figure>`,
   )
   .join('');
 

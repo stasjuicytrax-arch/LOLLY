@@ -67,12 +67,17 @@
 .wall { margin-top: var(--section-gap); }
 .wall__title { font-size: var(--fs-h1); font-variation-settings: 'wdth' 100; }
 .wall__track {
-  --h: clamp(380px, 64vh, 680px);
+  --h: min(70vh, 640px);
+  /* first card sits on the content grid edge, not the screen edge */
+  --edge: max(var(--field), calc((100vw - var(--max)) / 2 + var(--field)));
   margin-top: var(--s-24);
   display: flex;
   align-items: flex-start;
-  gap: var(--gutter);
-  padding-inline: var(--field);
+  justify-content: safe center; /* fits: centred; does not fit: starts at the grid edge and scrolls */
+  gap: 24px;
+  padding-inline: var(--edge);
+  scroll-padding-inline: var(--edge);
+  scroll-snap-type: x proximity;
   padding-bottom: var(--s-8);
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -110,10 +115,9 @@
   color: var(--bone);
 }
 .vcard__cap b { font-weight: 500; }
-.vcard--tall { height: var(--h); aspect-ratio: 9 / 16; }
-.vcard--mid { height: calc(var(--h) * 0.78); aspect-ratio: 9 / 16; margin-top: calc(var(--h) * 0.1); }
-.vcard--wide { height: calc(var(--h) * 0.5); aspect-ratio: 16 / 9; margin-top: calc(var(--h) * 0.5); }
-.vcard--low { margin-top: calc(var(--h) * 0.06); }
+.vcard { height: var(--h); scroll-snap-align: start; }
+.vcard--tall, .vcard--mid { aspect-ratio: 9 / 16; }
+.vcard--wide { aspect-ratio: 16 / 9; }
 
 /* ---- Lightbox ---- */
 .lightbox {
@@ -186,7 +190,6 @@
   .showreel__word--l { right: auto; left: var(--field); top: 22%; }
   .showreel__word--r { left: auto; right: var(--field); top: 78%; }
   .showreel__media { clip-path: inset(40% 14% 40% 14% round 999px); }
-  .vcard--wide { height: calc(var(--h) * 0.4); }
 }
 @media (prefers-reduced-motion: reduce) {
   .showreel__media { clip-path: none; position: relative; width: 100%; height: 70svh; }

@@ -90,5 +90,11 @@ export function initTours(): void {
     img.src = asset(row.dataset.previewSrc!);
     gsap.to(preview, { opacity: 1, scale: 1, duration: 0.35, ease: 'expo.out', overwrite: 'auto' });
   });
-  clubsEl.addEventListener('pointerleave', () => gsap.to(preview, { opacity: 0, scale: 0.92, duration: 0.3, overwrite: 'auto' }));
+  const hide = () => gsap.to(preview, { opacity: 0, scale: 0.92, duration: 0.3, overwrite: 'auto' });
+  clubsEl.addEventListener('pointerleave', hide);
+  // The preview is fixed to the viewport: never let it outlive the list (scrolling, leaving the section, tab change).
+  window.addEventListener('scroll', hide, { passive: true });
+  window.addEventListener('blur', hide);
+  const section = document.querySelector('.tours');
+  if (section) new IntersectionObserver(([e]) => !e.isIntersecting && hide()).observe(section);
 }
