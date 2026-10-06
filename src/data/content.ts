@@ -63,15 +63,15 @@ export interface Release {
   sub?: string;
   /** File stem in assets/img/releases (cover-<stem>.jpg/.webp). */
   cover: string;
-  /** True while only a low-res placeholder exists (cover-<stem>.jpg only). */
-  placeholder?: boolean;
+  /** No artwork yet: render a typographic cover instead of a photo. */
+  typographic?: boolean;
 }
 
-// All 7. Renew still has the low-res placeholder cropped from the old press kit; the artist will send the cover.
+// All 7. Renew has no artwork yet, so it gets a typographic cover until the artist sends one.
 export const releases: Release[] = [
   { title: 'Overload', cover: 'overload' },
   { title: 'Dun Do Drugs', sub: 'Lolly x Zerk', cover: 'dun-do-drugs' },
-  { title: 'Renew', cover: 'renew-lowres', placeholder: true },
+  { title: 'Renew', cover: 'renew', typographic: true },
   { title: 'Golden', cover: 'golden' },
   { title: 'GO', sub: 'BLACKPINK — GO (Lolly Remix)', cover: 'go' },
   { title: 'A Char Pin', sub: 'Nay Win Remix', cover: 'a-char-pin' },

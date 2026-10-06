@@ -15,8 +15,8 @@ export function initMusic(): void {
     track.innerHTML = releases
       .map((r, i) => {
         const base = `img/releases/cover-${r.cover}`;
-        const picture = r.placeholder
-          ? `<img src="${asset(`${base}.jpg`)}" alt="${r.title} cover (placeholder)" width="372" height="280" loading="lazy" decoding="async" />`
+        const picture = r.typographic
+          ? `<span class="rel__type" aria-hidden="true"><span class="rel__word">${r.title}</span><span class="rel__by">LOLLY</span></span>`
           : `<picture><source type="image/webp" srcset="${asset(`${base}.webp`)}" /><img src="${asset(`${base}.jpg`)}" alt="${r.title} cover" width="1200" height="1200" loading="lazy" decoding="async" /></picture>`;
         return `<article class="rel" style="--i:${i}">
           <a class="rel__card" href="${links.soundcloud}" target="_blank" rel="noopener" aria-label="${r.title}${r.sub ? `, ${r.sub}` : ''} on SoundCloud" data-cursor="LISTEN">${picture}</a>

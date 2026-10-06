@@ -30,6 +30,19 @@
   transform-style: preserve-3d;
   will-change: transform;
 }
+/* Typographic cover (no artwork yet): same square and radius as the photo covers. */
+.rel__card { container-type: inline-size; }
+.rel__type {
+  position: relative; display: grid; place-items: center;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 50% 38%, var(--wine), var(--blood) 78%);
+  color: var(--bone);
+}
+.rel__word {
+  font-family: var(--font-display); font-weight: 800; font-variation-settings: 'wdth' 125;
+  font-size: 17cqw; line-height: 0.86; letter-spacing: -0.04em; text-transform: uppercase;
+}
+.rel__by { position: absolute; left: 0; right: 0; bottom: 6cqw; text-align: center; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; color: var(--ash); }
 .rel__card picture { display: block; width: 100%; height: 100%; }
 .rel__card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
 .rel__meta { display: flex; justify-content: space-between; gap: var(--s-4); margin: var(--s-4) 0 0; }

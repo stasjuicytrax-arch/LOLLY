@@ -126,7 +126,8 @@
 .odo__col > span { display: block; height: 0.86em; line-height: 0.86; }
 .stat__plus { display: block; }
 .stats__photo { grid-column: 9 / span 4; margin: 0; position: sticky; top: var(--s-16); }
-.stats__photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: 54% 20%; border-radius: var(--r-card); }
+/* 2:3 vertical crop of the landscape frame, centred on the figure (head to the frame bottom). */
+.stats__photo img { display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; object-position: 51% 0%; border-radius: var(--r-card); }
 
 [data-fade] { opacity: 0; transform: translateY(32px); }
 
@@ -135,7 +136,7 @@
   .about__photo { grid-column: 8 / -1; }
   .stats__list { grid-column: 1 / -1; }
   .stats__photo { grid-column: 1 / -1; position: static; margin-top: var(--s-24); }
-  .stats__photo img { aspect-ratio: 4 / 3; object-position: 54% 30%; }
+  .stats__photo { max-width: 460px; }
 }
 @media (max-width: 767px) {
   .line--2 { padding-left: 0; }
