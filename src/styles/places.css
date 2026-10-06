@@ -118,7 +118,7 @@
 .tours__preview img { width: 100%; height: 100%; object-fit: cover; }
 
 @media (max-width: 1023px) {
-  .tours__cities { scroll-snap-type: x proximity; padding-right: 56px; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 56px), transparent); }
+  .tours__cities { scroll-snap-type: x proximity; padding-right: 56px; }
   .tours__cities li { scroll-snap-align: start; }
   .clubrow .micro { display: none; } /* the city is already the selected tab */
   .tours__cities { grid-column: 1 / -1; display: flex; gap: var(--s-2); overflow-x: auto; scrollbar-width: none; padding-bottom: var(--s-4); }

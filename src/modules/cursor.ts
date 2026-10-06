@@ -24,6 +24,9 @@ export function initCursor(): void {
     // Innermost labelled element wins (a PLAY card inside a DRAG track).
     const host = (e.target as Element).closest<HTMLElement>('[data-cursor]');
     const text = host?.dataset.cursor ?? '';
+    // Over a bare ribbon the native grab hand is the cursor; the dot steps aside.
+    const bare = !host && !!(e.target as Element).closest('[data-ribbon]');
+    gsap.to(dot, { opacity: bare ? 0 : 1, duration: 0.15, overwrite: 'auto' });
     label.textContent = text;
     dot.classList.toggle('is-label', Boolean(text));
   });
