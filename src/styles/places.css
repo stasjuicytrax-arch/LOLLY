@@ -82,11 +82,13 @@
   text-transform: uppercase;
   text-align: left;
   cursor: pointer;
-  transition: color var(--t-ui) var(--ease-out), padding var(--t-ui) var(--ease-out);
+  transition: color var(--t-ui) var(--ease-out);
 }
+.cityrow > span { transition: transform var(--t-ui) var(--ease-out); }
 .cityrow small { font-family: var(--font-mono); font-weight: 400; font-size: var(--fs-micro); letter-spacing: 0.08em; }
 .cityrow:hover { color: var(--bone); }
-.cityrow[aria-pressed='true'] { color: var(--signal); padding-left: var(--s-4); }
+.cityrow[aria-pressed='true'] { color: var(--signal); }
+.cityrow[aria-pressed='true'] > span { transform: translateX(var(--s-4)); }
 .cities__group { margin: var(--s-8) 0 var(--s-2); }
 .cities__group:first-child { margin-top: 0; }
 
@@ -98,10 +100,12 @@
   padding: var(--s-3) 0;
   border-bottom: 1px solid var(--smoke);
   font-size: clamp(1.125rem, 1.7vw, 1.625rem);
-  transition: color var(--t-micro) var(--ease-out), padding var(--t-ui) var(--ease-out);
+  transition: color var(--t-micro) var(--ease-out);
 }
+.clubrow > span:first-child { transition: transform var(--t-ui) var(--ease-out); }
 .clubrow .micro { flex: none; }
-.clubrow:hover { color: var(--signal); padding-left: var(--s-3); }
+.clubrow:hover { color: var(--signal); }
+.clubrow:hover > span:first-child { transform: translateX(var(--s-3)); }
 .clubrow:hover .micro { color: var(--signal); }
 
 .tours__preview {
@@ -118,7 +122,8 @@
   .tours__cities::-webkit-scrollbar { display: none; }
   .tours__cities li { flex: none; }
   .cityrow { border: 1px solid var(--smoke); border-radius: var(--r-pill); width: auto; padding: var(--s-2) var(--s-4); font-size: 1rem; }
-  .cityrow[aria-pressed='true'] { background: var(--signal-deep); color: var(--bone); border-color: var(--signal-deep); padding-left: var(--s-4); }
+  .cityrow[aria-pressed='true'] { background: var(--signal-deep); color: var(--bone); border-color: var(--signal-deep); }
+  .cityrow[aria-pressed='true'] > span { transform: none; }
   .cityrow small { display: none; }
   .cities__group { display: none; }
   .tours__clubs { grid-column: 1 / -1; margin-top: var(--s-8); min-height: 0; }

@@ -105,10 +105,12 @@
   border-top: 1px solid var(--smoke);
   font-family: var(--font-display); font-weight: 800; font-variation-settings: 'wdth' 100;
   font-size: var(--fs-h3); line-height: 1; letter-spacing: -0.03em; text-transform: uppercase;
-  transition: color var(--t-ui) var(--ease-out), padding var(--t-ui) var(--ease-out);
+  transition: color var(--t-ui) var(--ease-out);
 }
+.asset > span { transition: transform var(--t-ui) var(--ease-out); }
 .asset i { font-style: normal; font-family: var(--font-mono); font-weight: 400; font-size: 1rem; }
-.asset:hover, .asset:focus-visible { color: var(--signal); padding-left: var(--s-3); }
+.asset:hover, .asset:focus-visible { color: var(--signal); }
+.asset:hover > span, .asset:focus-visible > span { transform: translateX(var(--s-3)); }
 .pressph .asset { border-top-color: rgba(54, 4, 5, 0.2); color: var(--blood); }
 .pressph .asset:hover, .pressph .asset:focus-visible { color: var(--signal); }
 
