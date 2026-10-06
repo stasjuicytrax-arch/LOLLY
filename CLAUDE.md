@@ -24,7 +24,7 @@
 - `docs/references/` ← `Referens/*`, `docs/source/old-presskit.jpg` ← `Old presentation.jpg`
 
 ## Деплой
-Сайт: https://stasjuicytrax-arch.github.io/LOLLY/ — GitHub Pages, источник **ветка `gh-pages`** (GitHub Actions НЕ используем: очередь висит, workflow удалён).
+Сайт: https://stasjuicytrax-arch.github.io/LOLLY/ — GitHub Pages, источник **ветка `gh-pages`**.
 - Vite `base: '/LOLLY/'`. Скрипт `npm run deploy` = `vite build && gh-pages -d dist` (собирает и публикует `dist` в ветку `gh-pages`).
 - Порядок после каждого изменения: `git push origin main`, затем `npm run deploy`. Проверить живую ссылку.
 - Полные видео (`aftermovie-h.mp4` и др., кроме `*-loop.mp4`) в git не лежат; плагин в `vite.config.ts` вырезает их из `dist`. Чтобы опубликовать их, хостинг нужен отдельный (Vimeo/YouTube/CDN) или `KEEP_FULL_VIDEOS=1 npm run deploy` (≈150 МБ в историю ветки `gh-pages`).
