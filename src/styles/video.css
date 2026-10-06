@@ -1,5 +1,6 @@
 /* ---- 5 · Showreel ---- */
 .showreel { margin-top: var(--section-gap); }
+.showreel__title { display: none; }
 .showreel__stage {
   position: relative;
   height: 100svh;
@@ -186,10 +187,13 @@
   .vcard--tall, .vcard--mid { aspect-ratio: 9 / 16; }
   .vcard--wide { aspect-ratio: 16 / 9; height: auto; }
   .vcard__cap { left: 44px; right: 44px; bottom: var(--s-4); } /* wider than the 28–37px of the next card that peeks in, so no cut-off text shows */
-  .showreel__word { font-size: 17vw; }
-  .showreel__word--l { right: auto; left: var(--field); top: 22%; }
-  .showreel__word--r { left: auto; right: var(--field); top: 78%; }
-  .showreel__media { clip-path: inset(40% 14% 40% 14% round 999px); }
+  /* showreel on phones: label, one-line title, then the 16:9 card (no pin, no scrub, no reserved scroll) */
+  .showreel__word { display: none; }
+  .showreel__stage { height: auto; min-height: 0; overflow: visible; padding: 0 var(--field); }
+  .showreel__label { position: static; margin: 0 0 var(--s-4); }
+  .showreel__title { display: block; margin: 0 0 var(--s-6); font-size: min(15.5vw, 4.5rem); font-variation-settings: 'wdth' 100; white-space: nowrap; }
+  .showreel__media { position: relative; inset: auto; display: block; width: 100%; aspect-ratio: 16 / 9; clip-path: none; border-radius: var(--r-card); overflow: hidden; }
+  .showreel__meta { position: static; margin: var(--s-3) 0 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .showreel__media { clip-path: none; position: relative; width: 100%; height: 70svh; }

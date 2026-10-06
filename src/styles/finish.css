@@ -167,7 +167,7 @@
 .ribbon-bar[hidden], .ribbon-prog[hidden] { display: none; }
 .ribbon-bar__hint { display: inline-flex; align-items: center; gap: var(--s-2); color: var(--ash); }
 .hint-m { display: none; }
-.hint-arrow { font-style: normal; display: inline-block; }
+.hint-arrow { font-style: normal; display: inline-block; animation: hint-nudge 1.6s ease-in-out infinite; }
 .ribbon-bar__btns { display: inline-flex; gap: var(--s-2); }
 .ribbon-bar.is-label-only .ribbon-bar__btns { display: none; }
 .ribbon-btn {
@@ -195,7 +195,6 @@
 @media (hover: none), (max-width: 767px) {
   .hint-d, .ribbon-bar__btns { display: none; }
   .hint-m { display: inline; }
-  .hint-arrow { animation: hint-nudge 1.6s ease-in-out infinite; }
 }
 @keyframes hint-nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
 @media (prefers-reduced-motion: reduce) { .hint-arrow { animation: none; } }

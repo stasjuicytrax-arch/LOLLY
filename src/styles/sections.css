@@ -17,7 +17,7 @@
   background: var(--blood);
 }
 .pill > video, .pill > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.pill > img { object-position: 50% 22%; }
+.pill > img { object-position: 50% 33%; } /* oval framed on the face: eyes and lips fully inside */
 
 /* ---- 2 · Marquee ---- */
 .marquee {
@@ -130,7 +130,11 @@
 .stat__plus { display: block; }
 .stats__photo { grid-column: 9 / span 4; margin: 0; align-self: start; }
 /* Static, frameless: the lower third dissolves into the section instead of ending in a hard cut at the hips. */
-.stats__photo img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0%; -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%); mask-image: linear-gradient(to bottom, #000 60%, transparent 100%); }
+.stats__photo, .stats__photo img { border: 0; background: none; border-radius: 0; box-shadow: none; }
+.stats__photo img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; object-position: 50% 0%;
+  /* bottom third and both sides dissolve into the section: no visible rectangle */
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, #000 60%, transparent 100%), linear-gradient(to right, transparent, #000 10%, #000 90%, transparent); mask-composite: intersect; }
 
 .js [data-fade] { opacity: 0; transform: translateY(32px); }
 

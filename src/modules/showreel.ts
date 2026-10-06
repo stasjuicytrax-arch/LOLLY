@@ -25,5 +25,5 @@ export function initShowreel(): void {
     return () => tl.scrollTrigger?.kill();
   };
   mm.add('(min-width: 768px)', () => build('inset(41% 30% 41% 30% round 999px)'));
-  mm.add('(max-width: 767px)', () => build('inset(40% 14% 40% 14% round 999px)'));
+  // phones: no pin, no scrub; the card is simply in the page (see video.css)
 }

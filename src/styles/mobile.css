@@ -1,0 +1,37 @@
+/* Phones: tight vertical rhythm. --section-gap is clamp(56px, 10vw, 80px) (tokens.css);
+   label → heading 16px, heading → content 24px; nothing reserves space for elements that are hidden here. */
+@media (max-width: 767px) {
+  .label { margin-bottom: var(--s-4); }
+  .about__title, .wall__title, .res__title, .tours__title, .music__title, .gallery__title, .pressph__title { margin-bottom: 0; }
+
+  /* big light / dark blocks: 56px, not 128px */
+  .stats, .tours, .pressph { padding-block: 48px; }
+  .stats { margin-top: 40px; padding-bottom: 32px; }
+  .showreel { margin-top: 32px; }
+  .pressph { margin-top: 40px; }
+  .booking { padding-block: 56px var(--s-8); min-height: 0; }
+  .booking__wrap { gap: var(--s-6); }
+  .footer { padding-block: var(--s-8); }
+
+  /* heading → content: 24px */
+  .about__grid, .gal, .tours__grid, .assets { margin-top: var(--s-6); }
+  .wall__track, .music__track, .pressph__track { margin-top: 0; padding-bottom: 0; }
+  .music__player { margin-top: var(--s-8); }
+  .tours__grid { margin-top: var(--s-6); }
+  .about__facts { margin-top: var(--s-8); }
+  .assets { margin-top: var(--s-8); }
+  .stats__photo { margin-bottom: var(--s-4); }
+
+  /* ribbon hint row sits tight to the heading and the ribbon */
+  .ribbon-bar { margin: var(--s-4) auto 0; }
+  .ribbon-prog { margin-top: var(--s-3); }
+
+  /* residencies on phones: a plain swipe ribbon, no stage height to fill */
+  .res__stage { padding-bottom: 0; }
+  .res__head { padding-top: 0; }
+  .res__viewport { margin-top: var(--s-4); }
+  .rpanel:nth-child(even) { margin-top: var(--s-8); }
+
+  .marquee { padding-block: var(--s-3); gap: var(--s-2); }
+  .showreel__stage { padding-bottom: 0; }
+}

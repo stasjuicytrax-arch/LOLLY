@@ -19,7 +19,7 @@ function build(track: HTMLElement): void {
   bar.className = 'ribbon-bar';
   bar.innerHTML = `
     <span class="ribbon-bar__hint micro" aria-hidden="true">
-      <span class="hint-d">${pinned ? 'Scroll' : 'Drag / Scroll'}</span><span class="hint-m">Swipe</span>
+      <span class="hint-d">${pinned ? 'Scroll' : 'Drag'}</span><span class="hint-m">Swipe</span>
       <i class="hint-arrow">→</i>
     </span>
     <span class="ribbon-bar__btns">

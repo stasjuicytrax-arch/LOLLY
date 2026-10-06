@@ -45,5 +45,5 @@
 }
 
 @media (max-width: 767px) {
-  :root { --gutter: 12px; --field: 16px; }
+  :root { --gutter: 12px; --field: 16px; --section-gap: clamp(56px, 10vw, 80px); }
 }

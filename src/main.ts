@@ -11,6 +11,7 @@ import './styles/video.css';
 import './styles/places.css';
 import './styles/music.css';
 import './styles/finish.css';
+import './styles/mobile.css';
 
 import { initSmoothScroll } from './modules/smooth';
 import { runPreloader } from './modules/preloader';
