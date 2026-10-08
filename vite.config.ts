@@ -17,9 +17,10 @@ function stripFullVideos(): Plugin {
   };
 }
 
-// GitHub Pages: https://stasjuicytrax-arch.github.io/LOLLY/ (branch gh-pages, see `npm run deploy`)
+// Custom domain: https://djlolly.site (GitHub Pages, branch gh-pages, see `npm run deploy`)
+// public/CNAME ships the domain to gh-pages on every deploy; base is "/" since the site is served at the domain root.
 export default defineConfig({
-  base: '/LOLLY/',
+  base: '/',
   build: {
     target: 'es2022',
     assetsDir: 'static',

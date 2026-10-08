@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Vite + vanilla TypeScript, GSAP (ScrollTrigger, SplitText) + Lenis, static single page. Deploy: GitHub Pages (`base: '/LOLLY/'`). Decided in docs/TZ.md §4.
+Vite + vanilla TypeScript, GSAP (ScrollTrigger, SplitText) + Lenis, static single page. Deploy: GitHub Pages, custom domain `djlolly.site` via `public/CNAME` (`base: '/'`). Decided in docs/TZ.md §4.
 
 ## Users
 

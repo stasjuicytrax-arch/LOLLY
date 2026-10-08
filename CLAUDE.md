@@ -24,11 +24,11 @@
 - `docs/references/` ← `Referens/*`, `docs/source/old-presskit.jpg` ← `Old presentation.jpg`
 
 ## Деплой
-Сайт: https://stasjuicytrax-arch.github.io/LOLLY/ — GitHub Pages, источник **ветка `gh-pages`**.
-- Vite `base: '/LOLLY/'`. Скрипт `npm run deploy` = `vite build && gh-pages -d dist --dotfiles` (собирает и публикует `dist` в ветку `gh-pages`).
+Сайт: https://djlolly.site — GitHub Pages, источник **ветка `gh-pages`**, домен подключён через `public/CNAME`.
+- Vite `base: '/'`. Скрипт `npm run deploy` = `vite build && gh-pages -d dist --dotfiles` (собирает и публикует `dist` в ветку `gh-pages`, `CNAME` едет вместе с остальным `public/`).
 - Порядок после каждого изменения: `git push origin main`, затем `npm run deploy`. Проверить живую ссылку.
 - Полные видео (`aftermovie-h.mp4` и др.) в `main` не лежат (gitignore), но `npm run deploy` публикует их в ветку `gh-pages` вместе с сайтом, и лайтбокс играет их со звуком (решение заказчика). Исключить: `STRIP_FULL_VIDEOS=1 npm run deploy`.
-- Превью продакшн-сборки: `npm run build && npx vite preview` (в Git Bash `--base` не передавать: путь `/LOLLY/` превращается в путь Windows).
+- Превью продакшн-сборки: `npm run build && npx vite preview`.
 - В настройках репозитория: Pages → Source = «Deploy from a branch» → `gh-pages` / root (однократно, вручную).
 
 ## PDF-презентации (две: desktop и mobile)
